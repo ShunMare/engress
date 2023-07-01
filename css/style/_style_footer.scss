@@ -1,0 +1,84 @@
+@use '../common/define' as *;
+@use '../common/functions' as *;
+
+.footer-main-wrapper {
+  display: flex;
+  justify-content: center;
+  background-color: map-get($global-colors, "main");
+
+  .footer-main {
+    display: flex;
+    justify-content: space-between;
+    padding: mu(4) 0 mu(8);
+    max-width: map-get($max-width, "content");
+    width: 100%;
+    p {
+      @include p-style(map-get($global-colors, "font-sub"));
+    }
+    
+    &-nav {
+      display: flex;
+      height: mu(3);
+      li {
+        position: relative;
+        margin: 0 mu(3);
+      }
+      .vertical-line {
+        position: absolute;
+        @include vertical-line-style(map-get($global-colors, "white"), 0, - mu(3), 100%);
+      }
+    }
+    
+    &-info {
+      &-logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: mu(25);
+        height: mu(7);
+        background-color: map-get($global-colors, "white");
+        > img {
+          width: 80%;
+        }
+      }
+      
+      &-call {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: mu(3);
+        > p {
+          margin-left: mu(1);
+          font-weight: bold;
+        }
+      }
+      
+      &-when {
+        margin-top: mu(2);
+        > p {
+          display: flex;
+          justify-content: flex-end;
+          @include p-small-style(map-get($global-colors, "font-sub"));
+        }
+      }
+    }
+  }
+}
+
+.footer-copyright {
+  display: flex;
+  justify-content: center;
+  padding: mu(2) 0;
+  
+  &-text {
+    display: flex;
+    justify-content: flex-end;
+    max-width: map-get($max-width, 'content');
+    width: 100%;
+    @include respond(phone) {
+      justify-content: center;
+    }
+    > p {
+      font-weight: bold;
+    }
+  }
+}

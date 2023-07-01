@@ -1,0 +1,552 @@
+@use '../common/define' as *;
+@use '../common/functions' as *;
+
+.index-main-wrapper {
+  background: url('../../images/index_main.jpg') no-repeat center center;
+  background-size: cover;
+
+  .index-main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    * {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: map-get($global-colors, "font-sub");
+    }
+    
+    &-title{
+      @include h2-emphasize-style(map-get($global-colors, "white"));
+      @include text-shadow-style(map-get($global-colors, "black"));
+    }
+    
+    &-text {
+      margin-top: mu(3);
+    }
+    
+    &-button {
+      margin-top: mu(6);
+      &-content {
+        @include rounded-button-style(map-get($global-colors, "sub"), mu(32), mu(7))
+      }
+    }
+    
+    &-inquiry {
+      margin-top: mu(3);
+      text-decoration: underline;
+    }
+  }
+}
+
+.index-section-trouble-wrapper {
+  background-color: map-get($global-colors, "main");
+
+  .index-section-trouble {
+    * {
+      color: map-get($global-colors, "font-sub");
+    }
+    > * {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+    }
+    
+    &-list {
+      @include respond(phone) {
+        display: block;
+      }
+      > li {
+        margin: 0 mu(4);
+      }
+    }
+  
+    &-introduction {
+      margin: mu(10) 0 mu(7);
+      * {
+        color: map-get($global-colors, "font-main");
+      }
+      
+      &-text {
+        padding: mu(2);
+        width: map-get($max-width, 'content');
+        height: mu(31);
+        background-color :map-get($global-colors, "white");
+
+        &-content {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          padding: mu(2) 0 mu(2);
+          width: 100%;
+          height: 100%;
+          border: 5px solid map-get($global-colors, "font-main");
+          &-main {
+            @include p-emphasize-style(map-get($global-colors, "font-main"));
+          }
+        }
+      }
+    }
+  }
+}
+
+.index-section-strong-wrapper {
+  background-color: map-get($global-colors, "white");
+
+  .index-section-strong {    
+    &-feature-content {
+      display: flex;
+      margin: mu(8) 0;
+      @include reset-vertical-margins;
+      
+      &:nth-child(even) {
+        .index-section-strong-feature-content-text {
+          order: 2;
+          margin: 0 0 0 mu(3);
+        }
+        .index-section-strong-feature-content-img {
+          order: 1;
+          margin: 0 mu(3) 0 0;
+        }
+      }
+      
+      &-text {
+        margin: 0 mu(3) 0 0;
+        @include reset-horizon-margins;
+
+        &-label {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: mu(11);
+          height: mu(4);
+          background-color: map-get($global-colors, "sub");
+          > p {
+            color : map-get($global-colors, "font-sub");
+          }
+        }
+
+        &-title {
+          margin-top: mu(4);
+          > p {
+            @include p-emphasize-style(map-get($global-colors, "font-main"));
+          }
+        }
+        
+        &-content {
+          margin-top: mu(4);
+          > p {
+            font-weight: medium;
+          }
+        }
+      }
+      
+      &-img {
+        margin: 0 0 0 mu(3);
+        width: 100%;
+        max-height: mu(34);
+        > img {
+          width: mu(44);
+          height: 100%;
+        }
+      }
+    }
+  
+    &-plan {
+      display: flex;
+      justify-content: center;
+      margin-top: mu(12);
+      padding: mu(7) 0 mu(6);
+      width: 100%;
+      height: mu(27);
+      background: url('../../images/price.png') no-repeat center center;
+      background-size: cover;
+  
+      &-content {
+        > p {
+          @include p-emphasize-style(map-get($global-colors, "font-sub"));
+        }
+        
+        &-button {
+          display: flex;
+          justify-content: center;
+          margin-top: mu(3);
+          width: 100%;
+
+          &-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            @include rounded-button-style(map-get($global-colors, "white"), mu(25), mu(6));
+            background-color: transparent;
+            border: 1px solid map-get($global-colors, "white");
+            > p {
+              color: map-get($global-colors, "font-sub");
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.index-section-success-wrapper {
+  background-color: map-get($global-colors, "main");
+
+  .index-section-success {
+    * {
+      color: map-get($global-colors, "font-sub");
+    }
+    
+    &-example {
+      display: flex;
+      margin-top: mu(17);
+      @include respond(phone) {
+        display: block;
+      }
+      
+      &-card {
+        width: mu(35);
+        margin: 0 mu(2);
+        @include reset-horizon-margins;
+        * {
+          line-height: mu(4);
+          color: map-get($global-colors, "font-main");
+        }
+
+        &-text {
+          font-weight: bold;
+          color: map-get($global-colors, "font-sub");
+        }
+        
+        &-img {
+          display: flex;
+          justify-content: center;
+          align-items: end;
+          margin-top: mu(1);
+          width: mu(35);
+          height: mu(21);
+          background-color: map-get($global-colors, "white");
+          > img {
+            width: 50%;
+            height: 80%;
+          }
+        }
+        
+        &-info {
+          display: flex;
+          align-items: center;
+          margin-top: mu(2);
+          * {
+            background-color: map-get($global-colors, "white");
+          }
+          
+          &-job {
+            padding-left: mu(1);
+            width: mu(12);
+          }
+          
+          &-name {
+            margin-left: mu(1);
+            padding-left: mu(1);
+            width: 100%;
+          }
+        }
+        
+        &-result {
+          display: flex;
+          align-items: center;
+          margin-top: mu(1);
+          padding-left: mu(1);
+          background-color: map-get($global-colors, "white");
+        }
+      }
+    }
+  }
+}
+
+.index-section-Workflow-wrapper {
+  background-color: map-get($global-colors, "white");
+
+  .index-section-Workflow {
+    &-content-list {
+      display: flex;
+      margin: mu(1) 0;
+      height: mu(8); 
+      background-color: map-get($global-colors, "fill");
+      @include reset-vertical-margins;
+      * {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      &-no {
+        width: mu(8);
+        height: 100%;
+        background-color: map-get($global-colors, "sub");
+        p {
+          font-weight: bold;
+          color: map-get($global-colors, "font-sub");
+        }
+      }
+      
+      &-item {
+        position: relative;
+        justify-content: flex-start;
+        padding-left: mu(3);
+        width: mu(26);
+        .vertical-line {
+          position: absolute;
+          @include vertical-line-style(map-get($global-colors, "separate"), 25%, 100%, 50%);
+        }
+        p {
+          font-weight: bold;
+        }
+      }
+      
+      &-description {
+        padding-left: mu(7);
+      }
+    }
+  }
+}
+
+.index-section-qa-wrapper {
+  .index-section-qa {
+    &-content-toggle {
+      padding: mu(4) 0 mu(2);
+      border-top: 1px solid map-get($global-colors, "main");      
+      &:last-child {
+        border-bottom: 1px solid map-get($global-colors, "main");
+      }
+      
+      &-question {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+        &-toggle {
+          position: relative;
+          margin-right: mu(3);
+          width: mu(3);
+          height: mu(3);
+          
+          .bar {
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            background-color: map-get($global-colors, "main");
+            &:first-child {
+              transform: rotate(90deg);
+              top: mu(1);
+            }
+            // &:first-child {
+            //   display: none;
+            // }
+            &:last-child {
+              top: mu(1);
+            }
+          }
+        }
+      }
+    
+      &-answer {
+        margin-top: mu(2);
+        padding: mu(3) 0 mu(2) mu(3);
+        background-color: map-get($global-colors, "fill");
+      }
+    }
+  }
+}
+
+.index-section-blog-and-notice-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  
+  .index-section-blog-and-notice-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: mu(8);
+    max-width: map-get($max-width, "content");
+
+    .index-section-blog-wrapper {
+      margin-right: mu(8);
+
+      .index-section-blog {
+        &-title {
+          text-align: start;
+        }
+        
+        &-content-post {
+          &:first-child {
+            .index-section-blog-content-post-img {
+              background: url("../../images/sample01.jpg") no-repeat center center;
+              background-size: cover;
+            }
+          }
+          &:nth-child(2) {
+            .index-section-blog-content-post-img {
+              background: url("../../images/sample02.jpg") no-repeat center center;
+              background-size: cover;
+            }
+          }
+          &:last-child {
+            .index-section-blog-content-post-img {
+              background: url("../../images/sample03.jpg") no-repeat center center;
+              background-size: cover;
+            }
+          }
+          display: flex;
+          margin: mu(4) 0;
+          height: mu(14);
+          @include reset-vertical-margins;
+
+          &-img {
+            width: mu(19);
+            height: 100%;
+
+            &-category {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: mu(10);
+              height: mu(3);
+              background-color: map-get($global-colors, "main");
+              border: 1px solid map-get($global-colors, "box-border-main");
+              > p {
+                @include p-small-style(map-get($global-colors, "font-sub"));
+              }
+            }
+          }
+          
+          &-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin-left: mu(3);
+            width: mu(36);
+
+            &-title {
+              > p {
+                font-weight: bold;
+                text-decoration: underline;
+              }
+            }
+
+            &-date {
+              > p {
+                @include p-small-style(map-get($global-colors, "font-main"));
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .index-section-notice-wrapper {
+      margin-right: mu(8);
+
+      .index-section-notice {
+        &-title {
+          text-align: start;
+        }
+
+        &-content-post {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          margin: mu(2) 0;
+          @include reset-vertical-margins;
+
+          &-date {
+            @include p-small-style(map-get($global-colors, "font-main"));
+          }
+
+          &-title {
+            margin-top: mu(2);
+            height: mu(7);
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
+
+.index-section-request-wrapper {
+  margin-top: mu(15);
+  background: url("../../images/cta_2x.png") no-repeat center center;
+  background-size: cover;
+
+  .index-section-request {
+    &-title {
+      margin-bottom: mu(2);
+      color: map-get($global-colors, "font-sub");
+    }
+  
+    &-content {
+      &-button {
+        display: flex;
+        justify-content: center;
+        margin-top: 16px;
+        margin-bottom: 22px;
+  
+        &-content {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          @include rounded-button-style(map-get($global-colors, "sub"), mu(35), mu(6));
+          > p {
+            color: map-get($global-colors, "font-sub");
+          }
+        }
+      }
+    
+      &-question {
+        display: flex;
+        justify-content: center;
+        p {
+          text-decoration: underline;
+          color: map-get($global-colors, "font-sub");
+        }
+      }
+    }
+  }
+}
+
+.index-section-call-wrapper {
+  display: grid;
+  padding: 0;
+  
+  .index-section-call {
+    &-content {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      padding: mu(2) 0 mu(3);
+      > * {
+        display: flex;
+        align-items: end;
+      }
+
+      &-text {
+        margin-right: mu(2);
+        > p {
+          font-weight: bold;
+        }
+      }
+    
+      &-number {
+        > p {
+          @include p-emphasize-style(map-get($global-colors, "font-main"));
+        }
+      }
+      
+      &-when {
+        margin-left: mu(2);
+      }
+    }
+  }
+}

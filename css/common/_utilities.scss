@@ -1,0 +1,52 @@
+@use 'define' as *;
+@use 'functions' as *;
+
+.underline_sub_color {
+  display: inline;
+  background-image: linear-gradient(map-get($global-colors, "sub"), map-get($global-colors, "sub"));
+  background-repeat: no-repeat;
+  background-size: 100% 10px;
+  background-position: 0 75%;
+}
+
+// responsive for displaying none
+.none-phone {
+  @include respond(phone) {
+    display: none;
+  }
+}
+.none-tablet-portrait {
+  @include respond(tablet-portrait) {
+    display: none;
+  }
+}
+.none-tablet-landscape {
+  @include respond(tablet-landscape) {
+    display: none;
+  }
+}
+.none-desktop {
+  @include respond(desktop) {
+    display: none;
+  }
+}
+.none-tablet-portrait-phone {
+  @include respond(tablet-portrait-phone) {
+    display: none;
+  }
+}
+.none-tablet-landscape-phone {
+  @include respond(tablet-landscape-phone) {
+    display: none;
+  }
+}
+.none-tablet-portrait-desktop {
+  @include respond(tablet-portrait-desktop) {
+    display: none;
+  }
+}
+.none-tablet-landscape-desktop {
+  @include respond(tablet-landscape-desktop) {
+    display: none;
+  }
+}

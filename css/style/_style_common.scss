@@ -1,0 +1,60 @@
+@use '../common/define' as *;
+@use '../common/functions' as *;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+
+.wrapper {
+  width: 100%;
+  margin-top: mu(10);
+}
+
+main {
+  padding: mu(14) 0 mu(11);
+}
+
+section {
+  display:flex;
+  justify-content: center;
+  overflow: hidden;
+  padding: mu(8) 0 mu(7);
+  width: 100%;
+  @include respond(phone) {
+    padding: 0 mu(3);
+  }
+
+  > div {
+    max-width: map-get($max-width, 'content');
+    width: 100%;
+    > h2 {
+      margin-bottom: mu(7);
+    }
+  }
+  h2 {
+    text-align: center;
+  }
+}
+
+h2 {
+  @include h2-style(map-get($global-colors, "font-main"));
+}
+
+p {
+  @include p-style(map-get($global-colors, "font-main"));
+}
+
+a:hover {
+  opacity: map-get($opacity, "medium");
+  cursor: pointer;
+}
+
+li {
+  @include reset-horizon-margins;
+}

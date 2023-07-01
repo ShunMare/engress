@@ -1,0 +1,97 @@
+@use '../common/define' as *;
+@use '../common/functions' as *;
+
+header {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  z-index: map-get($z-index, "header");
+  width: 100%;
+  background-color: map-get($global-colors, "white");
+  
+  .header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 mu(2);
+    max-width: map-get($max-width, "header");
+    width: 100%;
+    height: mu(10);
+
+    .header-left {
+      display: flex;
+    
+      &-logo {
+        width: mu(17);
+      }
+    
+      &-nav {
+        margin-left: mu(3);
+        display: flex;
+        > li {
+          margin: 0 mu(3);
+          @include reset-horizon-margins;
+          @include respond(tablet-landscape-phone) {
+            margin: 0 mu(2);
+          }
+          > a p {
+            font-weight: bold;
+          }
+        }
+      }
+    }
+    
+    .header-right {
+      display: flex;
+      
+      &-contact {
+        text-align: right;
+        
+        &-time {}
+        
+        &-call {
+          display: flex;
+          align-items: center ;
+          > img {
+            width: mu(1);
+          }
+          > p {
+            margin-left: mu(1);
+            font-weight: bold;
+          }
+        }
+      }
+      
+      &-button {
+        display: flex;
+        align-items: center;
+        margin-left: mu(3);
+        > a {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          > p {
+            font-weight: bold;
+          }
+        }
+        
+        &-documents {
+          @include square-button-style(map-get($global-colors, "sub"), mu(18), mu(6));
+          > p {
+            color: map-get($global-colors, "font-sub");
+          }
+        }
+    
+        &-contact {
+          margin-left: mu(1);
+          @include square-button-style(map-get($global-colors, "main"), mu(18), mu(6));
+          > p {
+            color: map-get($global-colors, "font-sub");
+          }
+        }
+      }
+    }
+  }
+}
+
+
