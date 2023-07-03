@@ -1,0 +1,118 @@
+@use '../common/define' as *;
+@use '../common/functions' as *;
+
+.footer-main-wrapper {
+  display: flex;
+  justify-content: center;
+  background-color: map-get($global-colors, "main");
+  @include respond(tablet-portrait) {
+    padding: mu(7) mu(4) mu(6);
+  }
+  @include respond(tablet-portrait-phone) {
+    padding: mu(6) mu(3) mu(5);
+  }
+
+  .footer-main {
+    display: flex;
+    justify-content: space-between;
+    padding: mu(4) 0 mu(8);
+    max-width: map-get($max-width, "content");
+    width: 100%;
+    p {
+      @include p-style(map-get($global-colors, "font-sub"));
+    }
+    @include respond(tablet-portrait-phone) {
+      flex-direction: column;
+    }
+
+    &-nav {
+      display: flex;
+      height: mu(3);
+      li {
+        position: relative;
+        margin: 0 mu(3);
+      }
+      .vertical-line {
+        position: absolute;
+        @include vertical-line-style(map-get($global-colors, "white"), 0, - mu(3), 100%);
+      }
+      @include respond(tablet-portrait-phone) {
+        justify-content: center;
+      }
+    }
+    
+    &-info {
+      @include respond(tablet-portrait-phone) {
+        display: flex;
+        justify-content: center;
+        margin-top: mu(4);
+        height: 100%;
+      }
+      
+      &-logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: mu(25);
+        height: mu(7);
+        background-color: map-get($global-colors, "white");
+        > img {
+          width: 80%;
+        }
+        @include respond(tablet-portrait-phone) {
+          margin: 0 mu(2);
+        }
+      }
+      
+      &-text {
+        > * {
+          display: flex;
+          justify-content: flex-end;
+          @include respond(tablet-portrait-phone) {
+            justify-content: center;
+            align-items: center;
+          }
+        }
+        @include respond(tablet-portrait-phone) {
+          margin: 0 mu(2);
+        }
+        &-call {
+          margin-top: mu(3);
+          > p {
+            margin-left: mu(1);
+            font-weight: bold;
+          }
+          @include respond(tablet-portrait-phone) {
+            margin: 0;
+          }
+        }
+        
+        &-when {
+          margin-top: mu(2);
+          > p {
+            @include p-small-style(map-get($global-colors, "font-sub"));
+          }
+        }
+      }
+    }
+  }
+}
+
+.footer-copyright {
+  display: flex;
+  justify-content: center;
+  padding: mu(2) 0;
+  
+  &-text {
+    display: flex;
+    justify-content: flex-end;
+    max-width: map-get($max-width, 'content');
+    width: 100%;
+    @include respond(tablet-portrait-phone) {
+      justify-content: center;
+    }
+    > p {
+      font-weight: bold;
+    }
+  }
+}

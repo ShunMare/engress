@@ -1,0 +1,35 @@
+$base-unit: 8px;
+
+$global-colors: (
+  'main': #1B224C,
+  'sub': #F5A623,
+  'fill': #F8F8F8,
+  'font-main': #1B224C,
+  'font-sub': #FFFFFF,
+  'separate': #C3C3C3,
+  'box-border-main': #707070,
+  'white': #ffffff,
+  'black': #00000029
+);
+
+$max-width: (
+  'header': $base-unit * 160,
+  'content': $base-unit * 113,
+  'nav': $base-unit * 50
+);
+
+$opacity: (
+  'low': 0.3,
+  'medium': 0.7,
+  'high': 1.0
+);
+
+$z-index: (
+  'nav-hamburger': 930,
+  'nav': 920,
+  'hamburger': 910,
+  'header': 900,
+  'footer': 800,
+  'main': 200,
+  'background-image': -100
+);

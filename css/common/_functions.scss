@@ -1,0 +1,196 @@
+@use 'define' as *;
+
+// Multiplier Unit
+@function mu($multiplier) {
+  @return $multiplier * $base-unit;
+}
+
+// responsive
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media (max-width: mu(75)) { @content; }
+  }   
+  @else if $breakpoint == tablet-portrait {
+    @media (min-width: #{mu(75) + 1px}) and (max-width: mu(113)) { @content; }
+  }
+  @else if $breakpoint == tablet-landscape {
+    @media (min-width: #{mu(113) + 1px}) and (max-width: mu(150)) { @content; }
+  }
+  @else if $breakpoint == desktop {
+    @media (min-width: mu(150)) { @content; }
+  }
+  // define display of width range
+  @else if $breakpoint == tablet-portrait-phone {
+    @media (max-width: mu(113)) { @content; }
+  }
+  @else if $breakpoint == tablet-landscape-phone {
+    @media (max-width: mu(150)) { @content; }
+  }
+  @else if $breakpoint == tablet-portrait-desktop {
+    @media (min-width: #{mu(113) + 1px}) { @content; }
+  }
+  @else if $breakpoint == tablet-landscape-desktop {
+    @media (min-width: #{mu(150) + 1px}) { @content; }
+  }
+}
+
+@mixin reset-horizon-margins {
+  &:first-child {
+    margin-left: 0;
+  }
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+@mixin reset-horizon-margins-revert {
+  &:first-child {
+    margin-right: 0;
+  }
+  &:last-child {
+    margin-left: 0;
+  }
+}
+
+@mixin reset-vertical-margins {
+  &:first-child {
+    margin-top: 0;
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// h2 style
+@mixin h2-style($font-color) {
+  font-style: normal;
+  font-variant: normal;
+  font-weight: bold;
+  font-size: mu(5);
+  line-height: mu(7);
+  font-family: YuGothic, "Yu Gothic", "游ゴシック", "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;;
+  letter-spacing: 0;
+  color: $font-color;
+  @include respond(tablet-portrait) {
+    font-size: mu(4);
+    line-height: mu(6);
+  }
+  @include respond(phone) {
+    font-size: mu(4);
+    line-height: mu(5);
+  }
+}
+
+@mixin h2-emphasize-style($font-color) {
+  font-style: normal;
+  font-variant: normal;
+  font-weight: bold;
+  font-size: mu(6);
+  line-height: mu(8);
+  font-family: YuGothic, "Yu Gothic", "游ゴシック", "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;;
+  letter-spacing: 0;
+  color: $font-color;
+  @include respond(tablet-portrait) {
+    font-size: mu(5);
+    line-height: mu(7);
+  }
+  @include respond(phone) {
+    font-size: mu(4);
+    line-height: mu(6);
+  }
+}
+
+// p style
+@mixin p-style($font-color) {
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: mu(2);
+  line-height: mu(3);
+  font-family: YuGothic, "Yu Gothic", "游ゴシック", "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;;
+  letter-spacing: 0;
+  color: $font-color;
+  @include respond(phone) {
+    line-height: mu(2);
+  }
+}
+
+@mixin p-small-style($font-color) {
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: mu(2) * 0.8;
+  line-height: mu(2);
+  font-family: YuGothic, "Yu Gothic", "游ゴシック", "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;;
+  letter-spacing: 0;
+  color: $font-color;
+}
+
+@mixin p-large-style($font-color) {
+  font-style: normal;
+  font-variant: normal;
+  font-weight: bold;
+  font-size: mu(3);
+  line-height: mu(4);
+  font-family: YuGothic, "Yu Gothic", "游ゴシック", "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;;
+  letter-spacing: 0;
+  color: $font-color;
+}
+
+@mixin p-emphasize-style($font-color) {
+  font-style: normal;
+  font-variant: normal;
+  font-weight: bold;
+  font-size: mu(4);
+  line-height: mu(6);
+  font-family: YuGothic, "Yu Gothic", "游ゴシック", "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;;
+  letter-spacing: 0;
+  color: $font-color;
+  @include respond(tablet-landscape-phone) {
+    font-size: mu(3);
+    line-height: mu(5);
+  }
+}
+
+// vertical line style
+@mixin vertical-line-style($color, $top, $left, $height) {
+  top: $top;
+  left: $left;
+  height: $height;
+  width: 1px;
+  background-color: $color;
+}
+
+// text shadow style
+@mixin text-shadow-style($color) {
+  text-shadow: 0px 3px 6px $color;
+}
+
+// button style
+@mixin rounded-button-style($color, $width, $height) {
+  background-color: $color;
+  width: $width;
+  height: $height;
+  border-radius: mu(4);
+}
+
+@mixin square-button-style($color, $width, $height) {
+  background-color: $color;
+  width: $width;
+  height: $height;
+  border-radius: mu(1);
+}
+
+// background style
+@mixin background-image-style($imageUrl, $startOpacity, $endOpacity) {
+  content: "";
+  background: 
+    linear-gradient(rgba(0, 0, 0, $startOpacity), rgba(0, 0, 0, $endOpacity)),
+    url($imageUrl) no-repeat center center;
+  background-size: cover;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: map-get($z-index, "background-image");
+}
