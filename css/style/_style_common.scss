@@ -26,8 +26,11 @@ section {
   overflow: hidden;
   padding: mu(8) 0 mu(7);
   width: 100%;
+  @include respond(tablet-portrait) {
+    padding: mu(7) mu(4) mu(6);
+  }
   @include respond(phone) {
-    padding: 0 mu(3);
+    padding: mu(6) mu(3) mu(5);
   }
 
   > div {

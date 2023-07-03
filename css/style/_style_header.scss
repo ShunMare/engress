@@ -94,4 +94,103 @@ header {
   }
 }
 
+.header-hamburger-wrapper{
+  display: flex;
+  align-items: center;
 
+  #header-hamburger-toggle {
+    position: fixed;
+    cursor: pointer;
+    right: mu(3);
+    height: mu(4);
+    z-index: map-get($z-index, "hamburger");
+    
+    .header-hamburger-toggle-content {
+      position: relative;
+      width: mu(5);
+      height: 100%;
+      span {
+        display: block;
+        align-items: center;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        transition: transform .6s ease-in-out, top .5s ease;
+        background: map-get($global-colors, "main");
+        &:first-child {
+          top: mu(1);
+        }
+        &:nth-child(2) {
+          top: mu(2);
+        }
+        &:last-child {
+          top: mu(3);
+        }
+      }
+    }
+  }
+}
+
+.header-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  visibility: hidden;
+  z-index: map-get($z-index, "nav");
+  background-color: map-get($global-colors, "main");
+  &-content {
+    margin: mu(4) mu(4);
+    max-width: map-get($max-width, "nav");
+    width: 100%;
+    li {
+      display: flex;
+      align-items: center;
+      padding: mu(2);
+      border-top: 1px solid map-get($global-colors, "separate");      
+      transform: translateX(-400%);
+      transition: transform 0.8s ease-out;
+      &:last-child {
+        border-bottom: 1px solid map-get($global-colors, "separate");
+      }
+      a p {
+        @include p-emphasize-style(map-get($global-colors, "white"));
+      }
+    }
+  }
+}
+
+.header-nav-open {
+  #header-hamburger-toggle {
+    z-index: map-get($z-index, "nav-hamburger");
+
+    .header-hamburger-toggle-content {
+      span {
+        background: map-get($global-colors, "white");
+        &:first-child {
+          top: mu(2);
+          transform: rotate(45deg);
+        }
+        &:nth-child(2) {
+          display: none;
+        }
+        &:last-child {
+          top: mu(2);
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+
+  .header-nav {
+    visibility: visible;
+
+    &-content {
+      li {
+        transform: translateX(0);
+      }
+    }
+  }
+}

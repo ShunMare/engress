@@ -21,16 +21,16 @@
   }
   // define display of width range
   @else if $breakpoint == tablet-portrait-phone {
-    @media (max-width: mu(75)) { @content; }
+    @media (max-width: mu(113)) { @content; }
   }
   @else if $breakpoint == tablet-landscape-phone {
     @media (max-width: mu(150)) { @content; }
   }
   @else if $breakpoint == tablet-portrait-desktop {
-    @media (min-width: #{mu(75) + 1px}) { @content; }
+    @media (min-width: #{mu(113) + 1px}) { @content; }
   }
   @else if $breakpoint == tablet-landscape-desktop {
-    @media (min-width: #{mu(113) + 1px}) { @content; }
+    @media (min-width: #{mu(150) + 1px}) { @content; }
   }
 }
 
@@ -71,8 +71,13 @@
   font-family: YuGothic, "Yu Gothic", "游ゴシック", "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;;
   letter-spacing: 0;
   color: $font-color;
+  @include respond(tablet-portrait) {
+    font-size: mu(4);
+    line-height: mu(6);
+  }
   @include respond(phone) {
     font-size: mu(4);
+    line-height: mu(5);
   }
 }
 
@@ -85,8 +90,13 @@
   font-family: YuGothic, "Yu Gothic", "游ゴシック", "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;;
   letter-spacing: 0;
   color: $font-color;
+  @include respond(tablet-portrait) {
+    font-size: mu(5);
+    line-height: mu(7);
+  }
   @include respond(phone) {
     font-size: mu(4);
+    line-height: mu(6);
   }
 }
 
@@ -100,6 +110,9 @@
   font-family: YuGothic, "Yu Gothic", "游ゴシック", "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;;
   letter-spacing: 0;
   color: $font-color;
+  @include respond(phone) {
+    line-height: mu(2);
+  }
 }
 
 @mixin p-small-style($font-color) {
@@ -133,6 +146,10 @@
   font-family: YuGothic, "Yu Gothic", "游ゴシック", "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;;
   letter-spacing: 0;
   color: $font-color;
+  @include respond(tablet-landscape-phone) {
+    font-size: mu(3);
+    line-height: mu(5);
+  }
 }
 
 // vertical line style
@@ -162,4 +179,18 @@
   width: $width;
   height: $height;
   border-radius: mu(1);
+}
+
+// background style
+@mixin background-image-style($imageUrl, $startOpacity, $endOpacity) {
+  content: "";
+  background: 
+    linear-gradient(rgba(0, 0, 0, $startOpacity), rgba(0, 0, 0, $endOpacity)),
+    url($imageUrl) no-repeat center center;
+  background-size: cover;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: map-get($z-index, "background-image");
 }

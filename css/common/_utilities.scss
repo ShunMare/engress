@@ -12,41 +12,41 @@
 // responsive for displaying none
 .none-phone {
   @include respond(phone) {
-    display: none;
+    display: none !important;
   }
 }
 .none-tablet-portrait {
   @include respond(tablet-portrait) {
-    display: none;
+    display: none !important;
   }
 }
 .none-tablet-landscape {
   @include respond(tablet-landscape) {
-    display: none;
+    display: none !important;
   }
 }
 .none-desktop {
   @include respond(desktop) {
-    display: none;
+    display: none !important;
   }
 }
 .none-tablet-portrait-phone {
   @include respond(tablet-portrait-phone) {
-    display: none;
+    display: none !important;
   }
 }
 .none-tablet-landscape-phone {
   @include respond(tablet-landscape-phone) {
-    display: none;
+    display: none !important;
   }
 }
 .none-tablet-portrait-desktop {
   @include respond(tablet-portrait-desktop) {
-    display: none;
+    display: none !important;
   }
 }
 .none-tablet-landscape-desktop {
   @include respond(tablet-landscape-desktop) {
-    display: none;
+    display: none !important;
   }
 }

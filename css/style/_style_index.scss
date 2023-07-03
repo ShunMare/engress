@@ -59,6 +59,9 @@
       }
       > li {
         margin: 0 mu(4);
+        @include respond(phone) {
+          margin: mu(2) 0;
+        }  
       }
     }
   
@@ -82,6 +85,9 @@
           width: 100%;
           height: 100%;
           border: 5px solid map-get($global-colors, "font-main");
+          @include respond(phone) {
+            padding: mu(4) mu(2);
+          }        
           &-main {
             @include p-emphasize-style(map-get($global-colors, "font-main"));
           }
@@ -98,8 +104,9 @@
     &-feature-content {
       display: flex;
       margin: mu(8) 0;
+      z-index: map-get($z-index, "main");
+
       @include reset-vertical-margins;
-      
       &:nth-child(even) {
         .index-section-strong-feature-content-text {
           order: 2;
@@ -110,10 +117,33 @@
           margin: 0 mu(3) 0 0;
         }
       }
+      @include respond(tablet-landscape-phone) {
+        margin: mu(3) 0;
+        @include reset-vertical-margins;
+        &:first-child, &:nth-child(2), &:last-child {
+          position: relative;
+          &::after {
+            position: absolute;
+          }
+        }
+        &:first-child::after {
+          @include background-image-style("../../images/feature01.jpg", 0.5, 0.5);
+        }
+        &:nth-child(2)::after {
+          @include background-image-style("../../images/feature02.jpg", 0.5, 0.5);
+        }
+        &:last-child::after {
+          @include background-image-style("../../images/feature03.jpg", 0.5, 0.5);
+        }
+      }
       
       &-text {
         margin: 0 mu(3) 0 0;
         @include reset-horizon-margins;
+        @include respond(tablet-landscape-phone) {
+          margin: 0;
+          padding: mu(3);
+        }
 
         &-label {
           display: flex;
@@ -131,6 +161,9 @@
           margin-top: mu(4);
           > p {
             @include p-emphasize-style(map-get($global-colors, "font-main"));
+            @include respond(tablet-landscape-phone) {
+              color : map-get($global-colors, "font-sub");
+            }
           }
         }
         
@@ -138,6 +171,9 @@
           margin-top: mu(4);
           > p {
             font-weight: medium;
+            @include respond(tablet-landscape-phone) {
+              color : map-get($global-colors, "font-sub");
+            }
           }
         }
       }
@@ -202,8 +238,9 @@
     &-example {
       display: flex;
       margin-top: mu(17);
-      @include respond(phone) {
+      @include respond(tablet-landscape-phone) {
         display: block;
+        margin-top: mu(8);
       }
       
       &-card {
@@ -214,7 +251,15 @@
           line-height: mu(4);
           color: map-get($global-colors, "font-main");
         }
-
+        @include respond(tablet-landscape-phone) {
+          display: grid;
+          grid-template-columns: 1fr 2fr;
+          gap: mu(3);
+          width: auto;
+          margin: mu(2) 0;
+          @include reset-vertical-margins;
+        }
+  
         &-text {
           font-weight: bold;
           color: map-get($global-colors, "font-sub");
@@ -228,6 +273,10 @@
           width: mu(35);
           height: mu(21);
           background-color: map-get($global-colors, "white");
+          @include respond(tablet-landscape-phone) {
+            margin-top: 0;
+            width: 100%;
+          }
           > img {
             width: 50%;
             height: 80%;
@@ -236,30 +285,41 @@
         
         &-info {
           display: flex;
-          align-items: center;
-          margin-top: mu(2);
-          * {
+          flex-direction: column;
+          justify-content: space-between;
+
+          &-text {
+            font-weight: bold;
+            color: map-get($global-colors, "font-sub");   
+          }
+
+          &-personal {
+            display: flex;
+            align-items: center;
+            margin-top: mu(2);
+            > * {
+              background-color: map-get($global-colors, "white");
+            }
+
+            &-job {
+              padding-left: mu(1);
+              width: mu(12);
+            }
+            
+            &-name {
+              margin-left: mu(1);
+              padding-left: mu(1);
+              width: 100%;
+            }
+          }
+
+          &-result {
+            display: flex;
+            align-items: center;
+            margin-top: mu(1);
+            padding-left: mu(1);
             background-color: map-get($global-colors, "white");
           }
-          
-          &-job {
-            padding-left: mu(1);
-            width: mu(12);
-          }
-          
-          &-name {
-            margin-left: mu(1);
-            padding-left: mu(1);
-            width: 100%;
-          }
-        }
-        
-        &-result {
-          display: flex;
-          align-items: center;
-          margin-top: mu(1);
-          padding-left: mu(1);
-          background-color: map-get($global-colors, "white");
         }
       }
     }
@@ -281,6 +341,9 @@
         justify-content: center;
         align-items: center;
       }
+      @include respond(tablet-landscape-phone) {
+        height: mu(12);
+      }
       
       &-no {
         width: mu(8);
@@ -291,23 +354,37 @@
           color: map-get($global-colors, "font-sub");
         }
       }
-      
-      &-item {
-        position: relative;
-        justify-content: flex-start;
-        padding-left: mu(3);
-        width: mu(26);
-        .vertical-line {
-          position: absolute;
-          @include vertical-line-style(map-get($global-colors, "separate"), 25%, 100%, 50%);
+
+      &-text {
+        &-item {
+          position: relative;
+          justify-content: flex-start;
+          padding-left: mu(3);
+          width: mu(26);
+          .vertical-line {
+            position: absolute;
+            @include vertical-line-style(map-get($global-colors, "separate"), -15%, 100%, 130%);
+          }
+          p {
+            font-weight: bold;
+          }
         }
-        p {
-          font-weight: bold;
+        
+        &-description {
+          padding-left: mu(7);
         }
-      }
-      
-      &-description {
-        padding-left: mu(7);
+
+        @include respond(tablet-landscape-phone) {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+          align-items: flex-start;
+          width: 100%;
+          padding: mu(2);
+          > * {
+            padding: 0;
+          }
+        }
       }
     }
   }
@@ -316,7 +393,7 @@
 .index-section-qa-wrapper {
   .index-section-qa {
     &-content-toggle {
-      padding: mu(4) 0 mu(2);
+      padding: mu(4) 0 mu(4);
       border-top: 1px solid map-get($global-colors, "main");      
       &:last-child {
         border-bottom: 1px solid map-get($global-colors, "main");
@@ -332,29 +409,37 @@
           margin-right: mu(3);
           width: mu(3);
           height: mu(3);
+          cursor: pointer;
           
           .bar {
             position: absolute;
             width: 100%;
             height: 3px;
             background-color: map-get($global-colors, "main");
+            transition: transform .6s ease-in-out, top .5s ease;
             &:first-child {
-              transform: rotate(90deg);
               top: mu(1);
             }
-            // &:first-child {
-            //   display: none;
-            // }
             &:last-child {
+              transform: rotate(90deg);
               top: mu(1);
             }
           }
         }
+        
+        .bar-toggle-open {
+          .bar {
+            &:last-child {
+              transform: rotate(0);
+            }
+          }
+        }
       }
-    
+      
       &-answer {
+        display: none;
         margin-top: mu(2);
-        padding: mu(3) 0 mu(2) mu(3);
+        padding: mu(3) 0 mu(3) mu(3);
         background-color: map-get($global-colors, "fill");
       }
     }
@@ -371,13 +456,23 @@
     grid-template-columns: 1fr 1fr;
     gap: mu(8);
     max-width: map-get($max-width, "content");
+    @include respond(tablet-landscape-phone) {
+      display: block;
+    }
 
     .index-section-blog-wrapper {
       margin-right: mu(8);
 
       .index-section-blog {
+        @include respond(tablet-landscape-phone) {
+          width: 100%;
+        }
+
         &-title {
           text-align: start;
+          @include respond(tablet-landscape-phone) {
+            text-align: center;
+          }
         }
         
         &-content-post {
@@ -407,7 +502,10 @@
           &-img {
             width: mu(19);
             height: 100%;
-
+            @include respond(tablet-landscape-phone) {
+              width: mu(24);
+            }
+    
             &-category {
               display: flex;
               justify-content: center;
@@ -428,6 +526,9 @@
             justify-content: space-between;
             margin-left: mu(3);
             width: mu(36);
+            @include respond(tablet-landscape-phone) {
+              width: 100%;
+            }
 
             &-title {
               > p {
@@ -450,8 +551,14 @@
       margin-right: mu(8);
 
       .index-section-notice {
+        @include respond(tablet-landscape-phone) {
+          width: 100%;
+        }
         &-title {
           text-align: start;
+          @include respond(tablet-landscape-phone) {
+            text-align: center;
+          }
         }
 
         &-content-post {
@@ -520,15 +627,23 @@
 .index-section-call-wrapper {
   display: grid;
   padding: 0;
-  
+
   .index-section-call {
     &-content {
       display: grid;
       grid-template-columns: 1fr auto 1fr;
       padding: mu(2) 0 mu(3);
+      @include respond(tablet-landscape-phone) {
+        display: block;
+      }
       > * {
         display: flex;
         align-items: end;
+        @include respond(tablet-landscape-phone) {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
       }
 
       &-text {
@@ -546,6 +661,9 @@
       
       &-when {
         margin-left: mu(2);
+        @include respond(tablet-landscape-phone) {
+          margin: 0;
+        }
       }
     }
   }

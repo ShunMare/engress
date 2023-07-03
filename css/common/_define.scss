@@ -14,7 +14,8 @@ $global-colors: (
 
 $max-width: (
   'header': $base-unit * 160,
-  'content': $base-unit * 113
+  'content': $base-unit * 113,
+  'nav': $base-unit * 50
 );
 
 $opacity: (
@@ -24,7 +25,11 @@ $opacity: (
 );
 
 $z-index: (
-  'header': 100,
+  'nav-hamburger': 930,
+  'nav': 920,
+  'hamburger': 910,
+  'header': 900,
+  'footer': 800,
   'main': 200,
-  'footer': 300
+  'background-image': -100
 );
