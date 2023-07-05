@@ -200,6 +200,142 @@ li:last-child {
   margin-right: 0;
 }
 
+.common-breadcrumb-wrapper {
+  display: flex;
+  align-items: center;
+  padding: 16px 192px;
+  background-color: #F8F8F8;
+}
+.common-breadcrumb-wrapper * {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 600px) {
+  .common-breadcrumb-wrapper {
+    padding: 16px 24px;
+  }
+}
+@media (min-width: 601px) and (max-width: 904px) {
+  .common-breadcrumb-wrapper {
+    padding: 16px 48px;
+  }
+}
+@media (min-width: 905px) and (max-width: 1200px) {
+  .common-breadcrumb-wrapper {
+    padding: 16px 96px;
+  }
+}
+.common-breadcrumb-wrapper .common-breadcrumb li {
+  margin: 8px;
+  text-decoration: underline;
+}
+.common-breadcrumb-wrapper .common-breadcrumb li * {
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 12.8px;
+  line-height: 16px;
+  font-family: YuGothic, "Yu Gothic", "游ゴシック", "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+  letter-spacing: 0;
+  color: #1B224C;
+}
+.common-breadcrumb-wrapper .common-breadcrumb li:last-child {
+  text-decoration: none;
+}
+
+.common-request-wrapper {
+  margin-top: 120px;
+  background: url("../../images/cta_2x.png") no-repeat center center;
+  background-size: cover;
+}
+.common-request-wrapper .common-request-title {
+  margin-bottom: 16px;
+  color: #FFFFFF;
+}
+.common-request-wrapper .common-request-content-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+  margin-bottom: 22px;
+}
+.common-request-wrapper .common-request-content-button-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F5A623;
+  width: 280px;
+  height: 48px;
+  border-radius: 32px;
+}
+.common-request-wrapper .common-request-content-button-content > p {
+  color: #FFFFFF;
+}
+.common-request-wrapper .common-request-content-question {
+  display: flex;
+  justify-content: center;
+}
+.common-request-wrapper .common-request-content-question p {
+  text-decoration: underline;
+  color: #FFFFFF;
+}
+
+.common-call-wrapper {
+  display: grid;
+  padding: 0;
+}
+.common-call-wrapper .common-call-content {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  padding: 16px 0 24px;
+}
+@media (max-width: 1200px) {
+  .common-call-wrapper .common-call-content {
+    display: block;
+  }
+}
+.common-call-wrapper .common-call-content > * {
+  display: flex;
+  align-items: end;
+}
+@media (max-width: 1200px) {
+  .common-call-wrapper .common-call-content > * {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+.common-call-wrapper .common-call-content-text {
+  margin-right: 16px;
+}
+.common-call-wrapper .common-call-content-text > p {
+  font-weight: bold;
+}
+.common-call-wrapper .common-call-content-number > p {
+  font-style: normal;
+  font-variant: normal;
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 48px;
+  font-family: YuGothic, "Yu Gothic", "游ゴシック", "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+  letter-spacing: 0;
+  color: #1B224C;
+}
+@media (max-width: 1200px) {
+  .common-call-wrapper .common-call-content-number > p {
+    font-size: 24px;
+    line-height: 40px;
+  }
+}
+.common-call-wrapper .common-call-content-when {
+  margin-left: 16px;
+}
+@media (max-width: 1200px) {
+  .common-call-wrapper .common-call-content-when {
+    margin: 0;
+  }
+}
+
 header {
   display: flex;
   justify-content: center;
@@ -1220,96 +1356,188 @@ header .header-wrapper .header-right-button-contact > p {
   text-decoration: underline;
 }
 
-.index-section-request-wrapper {
-  margin-top: 120px;
-  background: url("../../images/cta_2x.png") no-repeat center center;
+.page-courses-main-wrapper {
+  background: url("../../images/page_courses_main_2x.png") no-repeat center center;
   background-size: cover;
 }
-.index-section-request-wrapper .index-section-request-title {
-  margin-bottom: 16px;
-  color: #FFFFFF;
-}
-.index-section-request-wrapper .index-section-request-content-button {
+.page-courses-main-wrapper .page-courses-main {
   display: flex;
   justify-content: center;
-  margin-top: 16px;
-  margin-bottom: 22px;
+  flex-direction: column;
 }
-.index-section-request-wrapper .index-section-request-content-button-content {
+.page-courses-main-wrapper .page-courses-main * {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #F5A623;
-  width: 280px;
-  height: 48px;
-  border-radius: 32px;
-}
-.index-section-request-wrapper .index-section-request-content-button-content > p {
+  text-align: center;
   color: #FFFFFF;
 }
-.index-section-request-wrapper .index-section-request-content-question {
-  display: flex;
-  justify-content: center;
-}
-.index-section-request-wrapper .index-section-request-content-question p {
-  text-decoration: underline;
-  color: #FFFFFF;
-}
-
-.index-section-call-wrapper {
-  display: grid;
-  padding: 0;
-}
-.index-section-call-wrapper .index-section-call-content {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  padding: 16px 0 24px;
-}
-@media (max-width: 1200px) {
-  .index-section-call-wrapper .index-section-call-content {
-    display: block;
-  }
-}
-.index-section-call-wrapper .index-section-call-content > * {
-  display: flex;
-  align-items: end;
-}
-@media (max-width: 1200px) {
-  .index-section-call-wrapper .index-section-call-content > * {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-}
-.index-section-call-wrapper .index-section-call-content-text {
-  margin-right: 16px;
-}
-.index-section-call-wrapper .index-section-call-content-text > p {
-  font-weight: bold;
-}
-.index-section-call-wrapper .index-section-call-content-number > p {
+.page-courses-main-wrapper .page-courses-main-title {
   font-style: normal;
   font-variant: normal;
   font-weight: bold;
-  font-size: 32px;
-  line-height: 48px;
+  font-size: 48px;
+  line-height: 64px;
+  font-family: YuGothic, "Yu Gothic", "游ゴシック", "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+  letter-spacing: 0;
+  color: #ffffff;
+}
+@media (min-width: 601px) and (max-width: 904px) {
+  .page-courses-main-wrapper .page-courses-main-title {
+    font-size: 40px;
+    line-height: 56px;
+  }
+}
+@media (max-width: 600px) {
+  .page-courses-main-wrapper .page-courses-main-title {
+    font-size: 32px;
+    line-height: 48px;
+  }
+}
+
+.page-courses-section-pricing-structure-wrapper .page-courses-section-pricing-structure * {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 600px) {
+  .page-courses-section-pricing-structure-wrapper .page-courses-section-pricing-structure-price {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+.page-courses-section-pricing-structure-wrapper .page-courses-section-pricing-structure-price-entrance, .page-courses-section-pricing-structure-wrapper .page-courses-section-pricing-structure-price-month {
+  width: 280px;
+  height: 96px;
+  background-color: #1B224C;
+}
+.page-courses-section-pricing-structure-wrapper .page-courses-section-pricing-structure-price-entrance p, .page-courses-section-pricing-structure-wrapper .page-courses-section-pricing-structure-price-month p {
+  font-style: normal;
+  font-variant: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 32px;
+  font-family: YuGothic, "Yu Gothic", "游ゴシック", "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+  letter-spacing: 0;
+  color: #FFFFFF;
+}
+.page-courses-section-pricing-structure-wrapper .page-courses-section-pricing-structure-price-plus {
+  position: relative;
+  padding: 32px;
+  width: 96px;
+  height: 96px;
+}
+.page-courses-section-pricing-structure-wrapper .page-courses-section-pricing-structure-price-plus span {
+  position: absolute;
+  width: 2px;
+  height: 32px;
+  background-color: #1B224C;
+}
+.page-courses-section-pricing-structure-wrapper .page-courses-section-pricing-structure-price-plus span:last-child {
+  transform: rotate(90deg);
+}
+.page-courses-section-pricing-structure-wrapper .page-courses-section-pricing-structure-price-text {
+  margin-top: 48px;
+  width: 100%;
+}
+.page-courses-section-pricing-structure-wrapper .page-courses-section-pricing-structure-price-text p {
+  font-weight: medium;
+}
+
+@media (max-width: 1200px) {
+  .page-courses-section-pricing-table-wrapper {
+    overflow-x: auto;
+  }
+}
+.page-courses-section-pricing-table-wrapper .page-courses-section-pricing-table-panel {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+@media (max-width: 1200px) {
+  .page-courses-section-pricing-table-wrapper .page-courses-section-pricing-table-panel {
+    width: 904px;
+    padding-right: 24px;
+  }
+}
+.page-courses-section-pricing-table-wrapper .page-courses-section-pricing-table-panel-list {
+  display: block;
+  margin-top: 32px;
+}
+.page-courses-section-pricing-table-wrapper .page-courses-section-pricing-table-panel-list:nth-child(3) {
+  margin-top: 0;
+}
+.page-courses-section-pricing-table-wrapper .page-courses-section-pricing-table-panel-list:nth-child(3) .page-courses-section-pricing-table-panel-list-head {
+  background-color: #F5A623;
+  height: 88px;
+}
+.page-courses-section-pricing-table-wrapper .page-courses-section-pricing-table-panel-list-head {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 16px;
+  height: 56px;
+  background-color: #1B224C;
+}
+.page-courses-section-pricing-table-wrapper .page-courses-section-pricing-table-panel-list-head p {
+  color: #FFFFFF;
+  font-weight: bold;
+}
+.page-courses-section-pricing-table-wrapper .page-courses-section-pricing-table-panel-list-head p:nth-child(2) {
+  margin-top: 16px;
+}
+.page-courses-section-pricing-table-wrapper .page-courses-section-pricing-table-panel-list-body {
+  display: flex;
+  flex-direction: column;
+  height: 472px;
+  border: 0.5px solid #1B224C;
+  border-top: none;
+}
+.page-courses-section-pricing-table-wrapper .page-courses-section-pricing-table-panel-list-body-price {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  margin: 32px 0 48px;
+}
+.page-courses-section-pricing-table-wrapper .page-courses-section-pricing-table-panel-list-body-price p:first-child {
+  font-style: normal;
+  font-variant: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 32px;
   font-family: YuGothic, "Yu Gothic", "游ゴシック", "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
   letter-spacing: 0;
   color: #1B224C;
 }
-@media (max-width: 1200px) {
-  .index-section-call-wrapper .index-section-call-content-number > p {
-    font-size: 24px;
-    line-height: 40px;
-  }
+.page-courses-section-pricing-table-wrapper .page-courses-section-pricing-table-panel-list-body-item {
+  display: flex;
+  flex-direction: column;
 }
-.index-section-call-wrapper .index-section-call-content-when {
-  margin-left: 16px;
+.page-courses-section-pricing-table-wrapper .page-courses-section-pricing-table-panel-list-body-item-list {
+  justify-content: center;
+  display: flex;
+  margin-top: 16px;
 }
-@media (max-width: 1200px) {
-  .index-section-call-wrapper .index-section-call-content-when {
-    margin: 0;
-  }
+.page-courses-section-pricing-table-wrapper .page-courses-section-pricing-table-panel-list-body-item-list-check {
+  display: flex;
+  padding-top: 4px;
+}
+.page-courses-section-pricing-table-wrapper .page-courses-section-pricing-table-panel-list-body-item-list-check span::before {
+  content: "";
+  display: block;
+  height: 8px;
+  width: 12px;
+  border-bottom: 3px solid #1B224C;
+  border-left: 3px solid #1B224C;
+  transform: rotate(-45deg);
+  margin-right: 8px;
+}
+.page-courses-section-pricing-table-wrapper .page-courses-section-pricing-table-panel-list-body-item-list p {
+  text-align: center;
+  max-width: 160px;
 }
 
 .underline_sub_color {
