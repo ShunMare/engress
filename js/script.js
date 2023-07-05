@@ -16,10 +16,13 @@ $(function($) {
 });
 
 window.onload = function() {
-  new ScrollHint('.page-courses-section-pricing-table', {
-    scrollHintIconAppendClass: 'scroll-hint-icon-white',
-    i18n: {
-      scrollable: 'スクロールできます'
-    }
-  });
+  var $scrollHintPanel = $('.page-courses-section-pricing-table');
+  if ($scrollHintPanel.length) {
+    new ScrollHint('.page-courses-section-pricing-table', {
+      scrollHintIconAppendClass: 'scroll-hint-icon-white',
+      i18n: {
+        scrollable: 'スクロールできます'
+      }
+    });
+  }
 };
