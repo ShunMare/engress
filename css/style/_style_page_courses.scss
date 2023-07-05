@@ -1,0 +1,174 @@
+@use '../common/define' as *;
+@use '../common/functions' as *;
+
+.page-courses-main-wrapper {
+  background: url('../../images/page_courses_main_2x.png') no-repeat center center;
+  background-size: cover;
+  
+  .page-courses-main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    * {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: map-get($global-colors, "font-sub");
+    }
+    
+    &-title{
+      @include h2-emphasize-style(map-get($global-colors, "white"));
+    }
+  }
+}
+
+.page-courses-section-pricing-structure-wrapper {
+  .page-courses-section-pricing-structure {
+    * {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    &-price {
+      @include respond(phone) {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+      }
+      &-entrance, &-month {
+        width: mu(35);
+        height: mu(12);
+        background-color: map-get($global-colors, "main");
+        p {
+          @include p-large-style(map-get($global-colors, "font-sub"));
+        }
+      }
+
+      &-plus {
+        position: relative;
+        padding: mu(4);
+        width: mu(12);
+        height: mu(12);
+        span {
+          position: absolute;
+          width: 2px;
+          height: mu(4);
+          background-color: map-get($global-colors, "main");
+          &:last-child {
+            transform: rotate(90deg);
+          }
+        }
+      }
+      
+      &-text {
+        margin-top: mu(6);
+        width: 100%;
+        p {
+          font-weight: medium;
+        }
+      }
+    }
+  }
+}
+
+.page-courses-section-pricing-table-wrapper {
+  @include respond(tablet-landscape-phone) {
+    overflow-x: auto;
+  }        
+  
+  .page-courses-section-pricing-table {
+    &-panel {
+      display: grid;
+      gap: mu(1);
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      @include respond(tablet-landscape-phone) {
+        width: map-get($max-width, "content");
+        padding-right: mu(3);
+      }        
+    
+      &-list {
+        display: block;
+        margin-top: mu(4);
+        &:nth-child(3) {
+          margin-top: 0;
+          .page-courses-section-pricing-table-panel-list-head {
+            background-color: map-get($global-colors, "sub");
+            height: mu(11);
+          }
+        }
+
+        &-head {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          margin-top: mu(2);
+          height: mu(7);
+          background-color: map-get($global-colors , "main");
+          p {
+            color: map-get($global-colors, "font-sub");
+            font-weight: bold;
+            &:nth-child(2) {
+              margin-top: mu(2);
+            }
+          }
+        }
+        
+        &-body {
+          display: flex;
+          flex-direction: column;
+          height: mu(59);
+          border: .5px solid map-get($global-colors, "main");
+          border-top: none;
+
+          &-price {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            margin: mu(4) 0 mu(6);
+            p {
+              &:first-child {
+                @include p-large-style(map-get($global-colors, "main"));
+              }
+            }
+          }
+
+          &-item {
+            display: flex;
+            flex-direction: column;
+            
+            &-list {
+              justify-content: center;
+              display: flex;
+              margin-top: mu(2);
+
+              &-check {
+                display: flex;
+                padding-top: 4px;
+
+                span {
+                  &::before{
+                    content: "";
+                    display: block;
+                    height: 8px;
+                    width: 12px;
+                    border-bottom: 3px solid map-get($global-colors, "main");
+                    border-left: 3px solid map-get($global-colors, "main");
+                    transform: rotate(-45deg);
+                    margin-right: mu(1);
+                  }
+                }
+              }
+              p {
+                text-align: center;
+                max-width: mu(20);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
