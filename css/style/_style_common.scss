@@ -49,7 +49,7 @@ h2 {
   @include h2-style(map-get($global-colors, "font-main"));
 }
 
-p {
+p , li, a {
   @include p-style(map-get($global-colors, "font-main"));
 }
 
@@ -64,25 +64,23 @@ li {
 
 .common-breadcrumb-wrapper {
   display: flex;
+  justify-content: center;
   align-items: center;
-  padding: mu(2) mu(24);
+  padding: mu(2) 0;
   background-color: map-get($global-colors, "fill");
   * {
     display: flex;
     align-items: center;
     justify-content: center;
   }
-  @include respond(phone) {
-    padding: mu(2) mu(3);
-  }
-  @include respond(tablet-portrait) {
-    padding: mu(2) mu(6);
-  }
-  @include respond(tablet-landscape) {
-    padding: mu(2) mu(12);
-  }
 
   .common-breadcrumb {
+    display: flex;
+    justify-content: flex-start;
+    width: map-get($max-width, "content");
+    @include respond(tablet-portrait-phone) {
+      padding: 0 mu(3);
+    }      
     li {
       margin: mu(1);
       text-decoration: underline;

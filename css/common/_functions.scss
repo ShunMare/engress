@@ -61,6 +61,51 @@
   }
 }
 
+// h1 style
+@mixin h1-blog-style($font-color) {
+  font-style: normal;
+  font-variant: normal;
+  font-weight: bold;
+  font-size: mu(4);
+  line-height: mu(5);
+  font-family: YuGothic, "Yu Gothic", "游ゴシック", "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;;
+  letter-spacing: 0;
+  color: $font-color;
+  margin-top: mu(4);
+  @include respond(tablet-portrait-phone) {
+    font-size: mu(3);
+    line-height: mu(4);
+  }
+}
+
+// h2 style
+@mixin h2-blog-style($font-color) {
+  font-style: normal;
+  font-variant: normal;
+  font-weight: bold;
+  font-size: mu(3);
+  line-height: mu(5);
+  font-family: YuGothic, "Yu Gothic", "游ゴシック", "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;;
+  letter-spacing: 0;
+  color: $font-color;
+  margin-top: mu(6);
+}
+
+// h3 style
+@mixin h3-blog-style($font-color) {
+  font-style: normal;
+  font-variant: normal;
+  font-weight: bold;
+  font-size: mu(3) * 0.8;
+  line-height: mu(4) * 0.8;
+  font-family: YuGothic, "Yu Gothic", "游ゴシック", "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;;
+  letter-spacing: 0;
+  color: $font-color;
+  border-left: 4px solid $font-color;
+  margin-top: mu(5);
+  padding-left: mu(1);
+}
+
 // h2 style
 @mixin h2-style($font-color) {
   font-style: normal;
@@ -121,6 +166,17 @@
   font-weight: normal;
   font-size: mu(2) * 0.8;
   line-height: mu(2);
+  font-family: YuGothic, "Yu Gothic", "游ゴシック", "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;;
+  letter-spacing: 0;
+  color: $font-color;
+}
+
+@mixin p-medium-style($font-color) {
+  font-style: normal;
+  font-variant: normal;
+  font-weight: medium;
+  font-size: mu(3) * 0.5;
+  line-height: mu(3);
   font-family: YuGothic, "Yu Gothic", "游ゴシック", "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;;
   letter-spacing: 0;
   color: $font-color;
