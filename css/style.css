@@ -1559,6 +1559,250 @@ header .header-wrapper .header-right-button-contact > p {
   max-width: 160px;
 }
 
+.page-contact-main-wrapper {
+  background: url("../../images/cta_2x.png") no-repeat center center;
+  background-size: cover;
+}
+.page-contact-main-wrapper .page-contact-main {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.page-contact-main-wrapper .page-contact-main * {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #FFFFFF;
+}
+.page-contact-main-wrapper .page-contact-main-title {
+  font-style: normal;
+  font-variant: normal;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 64px;
+  font-family: YuGothic, "Yu Gothic", "游ゴシック", "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+  letter-spacing: 0;
+  color: #FFFFFF;
+}
+@media (min-width: 601px) and (max-width: 904px) {
+  .page-contact-main-wrapper .page-contact-main-title {
+    font-size: 40px;
+    line-height: 56px;
+  }
+}
+@media (max-width: 600px) {
+  .page-contact-main-wrapper .page-contact-main-title {
+    font-size: 32px;
+    line-height: 48px;
+  }
+}
+
+.page-contact-section-wrapper .page-contact-section {
+  max-width: 696px;
+}
+.page-contact-section-wrapper .page-contact-section * {
+  display: flex;
+}
+.page-contact-section-wrapper .page-contact-section a {
+  display: inline-block;
+  color: #F5A623;
+  text-decoration: underline;
+}
+.page-contact-section-wrapper .page-contact-section .hidden {
+  display: none;
+}
+.page-contact-section-wrapper .page-contact-section input {
+  width: 100%;
+  height: 48px;
+  padding: 16px 24px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  font-family: YuGothic, "Yu Gothic", "游ゴシック", "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+  letter-spacing: 0;
+  color: #1B224C;
+  border: 0.5px solid #1B224C;
+}
+@media (max-width: 600px) {
+  .page-contact-section-wrapper .page-contact-section input {
+    line-height: 16px;
+  }
+}
+.page-contact-section-wrapper .page-contact-section input:focus {
+  outline: none;
+}
+.page-contact-section-wrapper .page-contact-section input::-moz-placeholder {
+  color: #B4B4B4;
+  opacity: 1;
+}
+.page-contact-section-wrapper .page-contact-section input::placeholder {
+  color: #B4B4B4;
+  opacity: 1;
+}
+.page-contact-section-wrapper .page-contact-section input:-ms-input-placeholder {
+  color: #B4B4B4;
+}
+.page-contact-section-wrapper .page-contact-section input::-ms-input-placeholder {
+  color: #B4B4B4;
+}
+.page-contact-section-wrapper .page-contact-section input[type=radio] {
+  display: inline-block;
+  position: relative;
+  padding: 0;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+.page-contact-section-wrapper .page-contact-section input[type=radio]::after {
+  content: "";
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #1B224C;
+}
+.page-contact-section-wrapper .page-contact-section input[type=radio]:checked::after {
+  display: block;
+}
+.page-contact-section-wrapper .page-contact-section input[type=checkbox] {
+  position: relative;
+  display: inline-block;
+  padding: 0;
+  width: 16px;
+  height: 16px;
+  background: #ffffff;
+}
+.page-contact-section-wrapper .page-contact-section input[type=checkbox]::after {
+  position: absolute;
+  display: none;
+  content: "";
+  width: 16px;
+  height: 8px;
+  border: solid;
+  border-color: #1B224C;
+  border-width: 0 0 3px 3px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%) rotate(-45deg);
+}
+.page-contact-section-wrapper .page-contact-section input[type=checkbox]:checked::after {
+  display: block;
+}
+.page-contact-section-wrapper .page-contact-section textarea {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  height: 240px;
+  padding: 16px 24px;
+  border: 0.5px solid #1B224C;
+  resize: none;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  font-family: YuGothic, "Yu Gothic", "游ゴシック", "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+  letter-spacing: 0;
+  color: #1B224C;
+}
+@media (max-width: 600px) {
+  .page-contact-section-wrapper .page-contact-section textarea {
+    line-height: 16px;
+  }
+}
+.page-contact-section-wrapper .page-contact-section textarea::-moz-placeholder {
+  color: #B4B4B4;
+  opacity: 1;
+}
+.page-contact-section-wrapper .page-contact-section textarea::placeholder {
+  color: #B4B4B4;
+  opacity: 1;
+}
+.page-contact-section-wrapper .page-contact-section textarea:-ms-input-placeholder {
+  color: #B4B4B4;
+}
+.page-contact-section-wrapper .page-contact-section textarea::-ms-input-placeholder {
+  color: #B4B4B4;
+}
+.page-contact-section-wrapper .page-contact-section .text-bold {
+  font-weight: bold;
+}
+.page-contact-section-wrapper .page-contact-section-info {
+  display: block;
+}
+.page-contact-section-wrapper .page-contact-section-info-input {
+  display: block;
+  margin-top: 24px;
+}
+.page-contact-section-wrapper .page-contact-section-info-input:first-child {
+  margin-top: 40px;
+}
+.page-contact-section-wrapper .page-contact-section-info-input-label {
+  justify-content: flex-start;
+}
+.page-contact-section-wrapper .page-contact-section-info-input input {
+  margin-top: 8px;
+}
+.page-contact-section-wrapper .page-contact-section-option {
+  flex-direction: column;
+  margin-top: 32px;
+}
+.page-contact-section-wrapper .page-contact-section-option-button {
+  align-items: center;
+  margin-top: 16px;
+}
+.page-contact-section-wrapper .page-contact-section-option-button p {
+  margin-left: 16px;
+}
+.page-contact-section-wrapper .page-contact-section-inquiry {
+  display: block;
+  margin-top: 32px;
+}
+.page-contact-section-wrapper .page-contact-section-inquiry textarea {
+  margin-top: 16px;
+}
+.page-contact-section-wrapper .page-contact-section-policy {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+}
+.page-contact-section-wrapper .page-contact-section-agreement {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 32px;
+}
+.page-contact-section-wrapper .page-contact-section-agreement p {
+  margin-left: 8px;
+}
+.page-contact-section-wrapper .page-contact-section-send {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 48px;
+}
+.page-contact-section-wrapper .page-contact-section-send a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  background-color: #1B224C;
+  border-radius: 5px;
+  width: 200px;
+  height: 48px;
+  color: #FFFFFF;
+  font-weight: bold;
+}
+
 .category-blog-main-wrapper {
   background: url("../../images/category-blog_main_2x.png") no-repeat center center;
   background-size: cover;
