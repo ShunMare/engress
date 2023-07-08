@@ -1,266 +1,174 @@
 @use '../common/define' as *;
 @use '../common/functions' as *;
 
-
-.single-blog-wrapper {
-  h1 {
-    @include h1-blog-style(map-get($global-colors, "main"))
-  }
-  h2 {
-    @include h2-blog-style(map-get($global-colors, "main"))
-  }
-  h3 {
-    @include h3-blog-style(map-get($global-colors, "main"))
-  }
-  div, img , p, ul, a {
-    margin-top: mu(4);
-  }
-  img {
-    width: 100%;
-  }
-  .mt-0 {
-    margin-top: 0 !important;
-  }
-}
-
-.single-blog-content {
-  a {
-    display: inline-block;
-    color: map-get($global-colors, "sub");
-    text-decoration: underline;
-  }
-  li {
-    padding-left: mu(4);
-    position: relative;
-  }
-  li::before {
-    content: '';
-    position: absolute;
-    top: 5px;
-    left: 0;
-    width: 10px;
-    height: 10px;
-    background-color: map-get($global-colors, "sub");
-    border-radius: 50%;
-  }
-}
-
-.single-blog-side {
-  li {
-    margin: mu(2) 0;
-    padding-left: mu(3);
-    position: relative;
-    color: map-get($global-colors, "main");
-    a {
-      font-weight: bold;
-    }
-  }
-  li::before {
-    content: '';
-    position: absolute;
-    top: 9px;
-    left: 10px;
-    width: 5px;
-    height: 5px;
-    background-color: map-get($global-colors, "main");
-    border-radius: 50%;
-  }
-}
-
-.quote-wrapper {
-  display: flex;
-  background-color: map-get($global-colors, "fill");
-  padding: mu(3) mu(3) mu(2) 0;
-  p {
-    margin-top: 0;
-  }
-
-  .p-quote-sign {
+.page-courses-main-wrapper {
+  background: url('../../images/page_courses_main_2x.png') no-repeat center center;
+  background-size: cover;
+  
+  .page-courses-main {
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin: 0 mu(1) 0 mu(2);
-    font-weight: medium;
-    font-size: mu(11);
-    line-height: mu(9);
-    color: map-get($global-colors, "quote");
+    flex-direction: column;
+    * {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: map-get($global-colors, "font-sub");
+    }
+    
+    &-title{
+      @include h2-emphasize-style(map-get($global-colors, "white"));
+    }
   }
 }
 
-.single-blog-small-box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: mu(1) 0;
-  width: mu(13);
-  background-color: map-get($global-colors, "main");
-  @include p-small-style(map-get($global-colors, "font-sub"));
-}
-
-.single-blog-large-box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: mu(2) 0;
-  width: mu(33);
-  background-color: map-get($global-colors, "main");
-  @include p-large-style(map-get($global-colors, "font-sub"));
-  @include respond(tablet-portrait-phone) {
-    width: 100%;
-  }
-}
-
-.single-blog-wrapper {
-  display:flex;
-  justify-content: center;
-  overflow: hidden;
-  padding-top: mu(8);
-  width: 100%;
-  @include respond(tablet-portrait) {
-    padding: 0 mu(4);
-  }
-  @include respond(phone) {
-    padding: 0 mu(3);
-  }
-
-  > div {
-    max-width: map-get($max-width, 'content');
-    width: 100%;
-  }
-
-  .single-blog {
-    display: grid;
-    grid-template-columns: 1fr .4fr;
-    gap: mu(4);
-    @include respond(tablet-portrait-desktop) {
-      margin-top: 0;
+.page-courses-section-pricing-structure-wrapper {
+  .page-courses-section-pricing-structure {
+    * {
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
-    @include respond(tablet-portrait-phone) {
-      display: block;
-    }
-    @include respond(tablet-portrait) {
-      padding: 0 mu(4);
-    }
-    @include respond(phone) {
-      padding: 0 mu(3);
-    }
-  
-    &-content {
-      &-info {
+    &-price {
+      @include respond(phone) {
         display: flex;
-        justify-content: space-between;
-        margin-top: mu(3);
-        div, p {
+        justify-content: center;
+        flex-direction: column;
+      }
+      &-entrance, &-month {
+        width: mu(35);
+        height: mu(12);
+        background-color: map-get($global-colors, "main");
+        p {
+          @include p-large-style(map-get($global-colors, "font-sub"));
+        }
+      }
+
+      &-plus {
+        position: relative;
+        padding: mu(4);
+        width: mu(12);
+        height: mu(12);
+        span {
+          position: absolute;
+          width: 2px;
+          height: mu(4);
+          background-color: map-get($global-colors, "main");
+          &:last-child {
+            transform: rotate(90deg);
+          }
+        }
+      }
+      
+      &-text {
+        margin-top: mu(6);
+        width: 100%;
+        p {
+          font-weight: medium;
+        }
+      }
+    }
+  }
+}
+
+.page-courses-section-pricing-table-wrapper {
+  @include respond(tablet-landscape-phone) {
+    overflow-x: auto;
+  }        
+  
+  .page-courses-section-pricing-table {
+    &-panel {
+      display: grid;
+      gap: mu(1);
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      @include respond(tablet-landscape-phone) {
+        width: map-get($max-width, "content");
+        padding-right: mu(3);
+      }        
+    
+      &-list {
+        display: block;
+        margin-top: mu(4);
+        &:nth-child(3) {
           margin-top: 0;
+          .page-courses-section-pricing-table-panel-list-head {
+            background-color: map-get($global-colors, "sub");
+            height: mu(11);
+          }
+        }
+
+        &-head {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          margin-top: mu(2);
+          height: mu(7);
+          background-color: map-get($global-colors , "main");
+          p {
+            color: map-get($global-colors, "font-sub");
+            font-weight: bold;
+            &:nth-child(2) {
+              margin-top: mu(2);
+            }
+          }
         }
         
-        &-share {
+        &-body {
           display: flex;
-          justify-content: flex-start;
-          margin-top: 0;
+          flex-direction: column;
+          height: mu(59);
+          border: .5px solid map-get($global-colors, "main");
+          border-top: none;
 
-          > p {
+          &-price {
             display: flex;
-            margin-top: 0;
-            margin-right: 4px;
-            padding: 0 mu(1);
-            border-radius: 3px;
-            @include reset-horizon-margins;
-            color: map-get($global-colors, "font-sub");
-            i {
-              display: flex;
-              align-items: center;
-              margin-right: mu(1) * 0.5;
-              font-size: 12px;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            margin: mu(4) 0 mu(6);
+            p {
+              &:first-child {
+                @include p-large-style(map-get($global-colors, "main"));
+              }
             }
           }
 
-          &-like {
-            background-color: map-get($global-colors, "share");
-          }
+          &-item {
+            display: flex;
+            flex-direction: column;
+            
+            &-list {
+              justify-content: center;
+              display: flex;
+              margin-top: mu(2);
 
-          &-share {
-            background-color: map-get($global-colors, "share");
-          }
+              &-check {
+                display: flex;
+                padding-top: 4px;
 
-          &-twitter {
-            background-color: map-get($global-colors, "twitter");
+                span {
+                  &::before{
+                    content: "";
+                    display: block;
+                    height: 8px;
+                    width: 12px;
+                    border-bottom: 3px solid map-get($global-colors, "main");
+                    border-left: 3px solid map-get($global-colors, "main");
+                    transform: rotate(-45deg);
+                    margin-right: mu(1);
+                  }
+                }
+              }
+              p {
+                text-align: center;
+                max-width: mu(20);
+              }
+            }
           }
         }
       }
-    }
-
-    &-side{
-      @include respond(tablet-portrait-phone) {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: mu(2);
-      }
-      @include respond(tablet-portrait-desktop) {
-        div:first-child {
-          margin-top: 0;
-          > p {
-            margin-top: 0;
-          }
-        }
-      }
-
-      &-post {
-        display: grid;
-        grid-template-columns: 1fr 1.4fr;
-        gap: mu(2);
-        margin-top: mu(5);
-  
-        img, a {
-          display: flex;
-          align-items: flex-start;
-          margin-top: 0;
-        }
-        img {
-          min-height: mu(9);
-        }
-        a {
-          @include p-medium-style(map-get($global-colors, "main"));
-          text-decoration: underline;
-        }
-      }
-    }
-  }
-}
-
-.single-blog-content-text-recommend-post {
-  display: grid;
-  grid-template-columns: 1fr 1.7fr;
-  gap: mu(4);
-  
-  .post-img {
-    position: relative;
-    background-size: cover;
-    height: mu(17);
-    img {
-      width: 100%;
-      height: 100%;
-    }
-    p {
-      display: inline-block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      padding: mu(1) mu(2);
-      background-color: map-get($global-colors, "main");
-      @include p-small-style(map-get($global-colors, "font-sub"));
-    }
-  }
-  
-  .post-text {
-    > * {
-      margin-top: mu(3);
-    }
-    &-title {
-      margin-top: mu(3);
-      @include p-style(map-get($global-colors, "font-main"));
-      font-weight: bold;
-      text-decoration: underline;
     }
   }
 }

@@ -1375,6 +1375,385 @@ header .header-wrapper .header-right-button-contact > p {
   text-decoration: underline;
 }
 
+.page-courses-main-wrapper {
+  background: url("../../images/page_courses_main_2x.png") no-repeat center center;
+  background-size: cover;
+}
+.page-courses-main-wrapper .page-courses-main {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.page-courses-main-wrapper .page-courses-main * {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #FFFFFF;
+}
+.page-courses-main-wrapper .page-courses-main-title {
+  font-style: normal;
+  font-variant: normal;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 64px;
+  font-family: YuGothic, "Yu Gothic", "游ゴシック", "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+  letter-spacing: 0;
+  color: #ffffff;
+}
+@media (min-width: 601px) and (max-width: 904px) {
+  .page-courses-main-wrapper .page-courses-main-title {
+    font-size: 40px;
+    line-height: 56px;
+  }
+}
+@media (max-width: 600px) {
+  .page-courses-main-wrapper .page-courses-main-title {
+    font-size: 32px;
+    line-height: 48px;
+  }
+}
+
+.page-courses-section-pricing-structure-wrapper .page-courses-section-pricing-structure * {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 600px) {
+  .page-courses-section-pricing-structure-wrapper .page-courses-section-pricing-structure-price {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+.page-courses-section-pricing-structure-wrapper .page-courses-section-pricing-structure-price-entrance, .page-courses-section-pricing-structure-wrapper .page-courses-section-pricing-structure-price-month {
+  width: 280px;
+  height: 96px;
+  background-color: #1B224C;
+}
+.page-courses-section-pricing-structure-wrapper .page-courses-section-pricing-structure-price-entrance p, .page-courses-section-pricing-structure-wrapper .page-courses-section-pricing-structure-price-month p {
+  font-style: normal;
+  font-variant: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 32px;
+  font-family: YuGothic, "Yu Gothic", "游ゴシック", "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+  letter-spacing: 0;
+  color: #FFFFFF;
+}
+.page-courses-section-pricing-structure-wrapper .page-courses-section-pricing-structure-price-plus {
+  position: relative;
+  padding: 32px;
+  width: 96px;
+  height: 96px;
+}
+.page-courses-section-pricing-structure-wrapper .page-courses-section-pricing-structure-price-plus span {
+  position: absolute;
+  width: 2px;
+  height: 32px;
+  background-color: #1B224C;
+}
+.page-courses-section-pricing-structure-wrapper .page-courses-section-pricing-structure-price-plus span:last-child {
+  transform: rotate(90deg);
+}
+.page-courses-section-pricing-structure-wrapper .page-courses-section-pricing-structure-price-text {
+  margin-top: 48px;
+  width: 100%;
+}
+.page-courses-section-pricing-structure-wrapper .page-courses-section-pricing-structure-price-text p {
+  font-weight: medium;
+}
+
+@media (max-width: 1200px) {
+  .page-courses-section-pricing-table-wrapper {
+    overflow-x: auto;
+  }
+}
+.page-courses-section-pricing-table-wrapper .page-courses-section-pricing-table-panel {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+@media (max-width: 1200px) {
+  .page-courses-section-pricing-table-wrapper .page-courses-section-pricing-table-panel {
+    width: 904px;
+    padding-right: 24px;
+  }
+}
+.page-courses-section-pricing-table-wrapper .page-courses-section-pricing-table-panel-list {
+  display: block;
+  margin-top: 32px;
+}
+.page-courses-section-pricing-table-wrapper .page-courses-section-pricing-table-panel-list:nth-child(3) {
+  margin-top: 0;
+}
+.page-courses-section-pricing-table-wrapper .page-courses-section-pricing-table-panel-list:nth-child(3) .page-courses-section-pricing-table-panel-list-head {
+  background-color: #F5A623;
+  height: 88px;
+}
+.page-courses-section-pricing-table-wrapper .page-courses-section-pricing-table-panel-list-head {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 16px;
+  height: 56px;
+  background-color: #1B224C;
+}
+.page-courses-section-pricing-table-wrapper .page-courses-section-pricing-table-panel-list-head p {
+  color: #FFFFFF;
+  font-weight: bold;
+}
+.page-courses-section-pricing-table-wrapper .page-courses-section-pricing-table-panel-list-head p:nth-child(2) {
+  margin-top: 16px;
+}
+.page-courses-section-pricing-table-wrapper .page-courses-section-pricing-table-panel-list-body {
+  display: flex;
+  flex-direction: column;
+  height: 472px;
+  border: 0.5px solid #1B224C;
+  border-top: none;
+}
+.page-courses-section-pricing-table-wrapper .page-courses-section-pricing-table-panel-list-body-price {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  margin: 32px 0 48px;
+}
+.page-courses-section-pricing-table-wrapper .page-courses-section-pricing-table-panel-list-body-price p:first-child {
+  font-style: normal;
+  font-variant: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 32px;
+  font-family: YuGothic, "Yu Gothic", "游ゴシック", "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+  letter-spacing: 0;
+  color: #1B224C;
+}
+.page-courses-section-pricing-table-wrapper .page-courses-section-pricing-table-panel-list-body-item {
+  display: flex;
+  flex-direction: column;
+}
+.page-courses-section-pricing-table-wrapper .page-courses-section-pricing-table-panel-list-body-item-list {
+  justify-content: center;
+  display: flex;
+  margin-top: 16px;
+}
+.page-courses-section-pricing-table-wrapper .page-courses-section-pricing-table-panel-list-body-item-list-check {
+  display: flex;
+  padding-top: 4px;
+}
+.page-courses-section-pricing-table-wrapper .page-courses-section-pricing-table-panel-list-body-item-list-check span::before {
+  content: "";
+  display: block;
+  height: 8px;
+  width: 12px;
+  border-bottom: 3px solid #1B224C;
+  border-left: 3px solid #1B224C;
+  transform: rotate(-45deg);
+  margin-right: 8px;
+}
+.page-courses-section-pricing-table-wrapper .page-courses-section-pricing-table-panel-list-body-item-list p {
+  text-align: center;
+  max-width: 160px;
+}
+
+.category-blog-main-wrapper {
+  background: url("../../images/category-blog_main_2x.png") no-repeat center center;
+  background-size: cover;
+}
+.category-blog-main-wrapper .category-blog-main {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.category-blog-main-wrapper .category-blog-main * {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #FFFFFF;
+}
+.category-blog-main-wrapper .category-blog-main-title {
+  font-style: normal;
+  font-variant: normal;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 64px;
+  font-family: YuGothic, "Yu Gothic", "游ゴシック", "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+  letter-spacing: 0;
+  color: #ffffff;
+}
+@media (min-width: 601px) and (max-width: 904px) {
+  .category-blog-main-wrapper .category-blog-main-title {
+    font-size: 40px;
+    line-height: 56px;
+  }
+}
+@media (max-width: 600px) {
+  .category-blog-main-wrapper .category-blog-main-title {
+    font-size: 32px;
+    line-height: 48px;
+  }
+}
+
+.category-blog-section-post-wrapper .category-blog-section-post-content-item {
+  display: grid;
+  grid-template-columns: 1fr 2.5fr;
+  gap: 48px;
+  margin: 88px 0;
+}
+.category-blog-section-post-wrapper .category-blog-section-post-content-item:first-child {
+  margin-left: 0;
+}
+.category-blog-section-post-wrapper .category-blog-section-post-content-item:last-child {
+  margin-right: 0;
+}
+.category-blog-section-post-wrapper .category-blog-section-post-content-item:nth-child(even) .category-blog-section-post-content-item-img {
+  background: url("../../images/sample02.jpg") no-repeat center center;
+  background-size: cover;
+}
+.category-blog-section-post-wrapper .category-blog-section-post-content-item:nth-child(odd) .category-blog-section-post-content-item-img {
+  background: url("../../images/sample03.jpg") no-repeat center center;
+  background-size: cover;
+}
+.category-blog-section-post-wrapper .category-blog-section-post-content-item:first-child .category-blog-section-post-content-item-img {
+  background: url("../../images/sample01.jpg") no-repeat center center;
+  background-size: cover;
+}
+@media (max-width: 600px) {
+  .category-blog-section-post-wrapper .category-blog-section-post-content-item {
+    display: block;
+  }
+}
+@media (min-width: 601px) and (max-width: 904px) {
+  .category-blog-section-post-wrapper .category-blog-section-post-content-item {
+    grid-template-columns: 1fr 2fr;
+    gap: 24px;
+  }
+}
+.category-blog-section-post-wrapper .category-blog-section-post-content-item-img {
+  height: 168px;
+}
+@media (max-width: 600px) {
+  .category-blog-section-post-wrapper .category-blog-section-post-content-item-img {
+    width: 100%;
+    height: 320px;
+  }
+}
+.category-blog-section-post-wrapper .category-blog-section-post-content-item-img-category {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 32px;
+  background-color: #1B224C;
+}
+.category-blog-section-post-wrapper .category-blog-section-post-content-item-img-category p {
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 12.8px;
+  line-height: 16px;
+  font-family: YuGothic, "Yu Gothic", "游ゴシック", "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+  letter-spacing: 0;
+  color: #FFFFFF;
+}
+.category-blog-section-post-wrapper .category-blog-section-post-content-item-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+@media (max-width: 600px) {
+  .category-blog-section-post-wrapper .category-blog-section-post-content-item-text {
+    margin-top: 32px;
+  }
+}
+@media (max-width: 600px) {
+  .category-blog-section-post-wrapper .category-blog-section-post-content-item-text-title {
+    margin-top: 16px;
+  }
+}
+.category-blog-section-post-wrapper .category-blog-section-post-content-item-text-title p {
+  font-style: normal;
+  font-variant: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 32px;
+  font-family: YuGothic, "Yu Gothic", "游ゴシック", "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+  letter-spacing: 0;
+  color: #1B224C;
+  text-decoration: underline;
+}
+.category-blog-section-post-wrapper .category-blog-section-post-content-item-text-content {
+  height: 56px;
+}
+@media (max-width: 600px) {
+  .category-blog-section-post-wrapper .category-blog-section-post-content-item-text-content {
+    margin-top: 16px;
+  }
+}
+
+.category-news-main-wrapper {
+  background: url("../../images/category_news_main_2x.png") no-repeat center center;
+  background-size: cover;
+}
+.category-news-main-wrapper .category-news-main {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.category-news-main-wrapper .category-news-main * {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #FFFFFF;
+}
+.category-news-main-wrapper .category-news-main-title {
+  font-style: normal;
+  font-variant: normal;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 64px;
+  font-family: YuGothic, "Yu Gothic", "游ゴシック", "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+  letter-spacing: 0;
+  color: #ffffff;
+}
+@media (min-width: 601px) and (max-width: 904px) {
+  .category-news-main-wrapper .category-news-main-title {
+    font-size: 40px;
+    line-height: 56px;
+  }
+}
+@media (max-width: 600px) {
+  .category-news-main-wrapper .category-news-main-title {
+    font-size: 32px;
+    line-height: 48px;
+  }
+}
+
+.category-news-section-post-wrapper .category-news-section-post-content-item {
+  display: flex;
+  align-items: center;
+  height: 64px;
+  border-top: 1px solid #C3C3C3;
+}
+.category-news-section-post-wrapper .category-news-section-post-content-item:last-child {
+  border-bottom: 1px solid #C3C3C3;
+}
+.category-news-section-post-wrapper .category-news-section-post-content-item-text {
+  margin-left: 48px;
+}
+.category-news-section-post-wrapper .category-news-section-post-content-item-text p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 720px;
+  text-decoration: underline;
+}
+
 .single-blog-wrapper h1 {
   font-style: normal;
   font-variant: normal;
@@ -1705,199 +2084,140 @@ header .header-wrapper .header-right-button-contact > p {
   }
 }
 
-.category-blog-main-wrapper {
-  background: url("../../images/category-blog_main_2x.png") no-repeat center center;
-  background-size: cover;
-}
-.category-blog-main-wrapper .category-blog-main {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-.category-blog-main-wrapper .category-blog-main * {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: #FFFFFF;
-}
-.category-blog-main-wrapper .category-blog-main-title {
+.single-news-wrapper h1 {
   font-style: normal;
   font-variant: normal;
   font-weight: bold;
-  font-size: 48px;
-  line-height: 64px;
+  font-size: 32px;
+  line-height: 40px;
   font-family: YuGothic, "Yu Gothic", "游ゴシック", "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
   letter-spacing: 0;
-  color: #ffffff;
+  color: #1B224C;
+  margin-top: 32px;
 }
-@media (min-width: 601px) and (max-width: 904px) {
-  .category-blog-main-wrapper .category-blog-main-title {
-    font-size: 40px;
-    line-height: 56px;
+@media (max-width: 904px) {
+  .single-news-wrapper h1 {
+    font-size: 24px;
+    line-height: 32px;
   }
 }
-@media (max-width: 600px) {
-  .category-blog-main-wrapper .category-blog-main-title {
-    font-size: 32px;
-    line-height: 48px;
-  }
-}
-
-.category-blog-section-post-wrapper .category-blog-section-post-content-item {
-  display: grid;
-  grid-template-columns: 1fr 2.5fr;
-  gap: 48px;
-  margin: 88px 0;
-}
-.category-blog-section-post-wrapper .category-blog-section-post-content-item:first-child {
-  margin-left: 0;
-}
-.category-blog-section-post-wrapper .category-blog-section-post-content-item:last-child {
-  margin-right: 0;
-}
-.category-blog-section-post-wrapper .category-blog-section-post-content-item:nth-child(even) .category-blog-section-post-content-item-img {
-  background: url("../../images/sample02.jpg") no-repeat center center;
-  background-size: cover;
-}
-.category-blog-section-post-wrapper .category-blog-section-post-content-item:nth-child(odd) .category-blog-section-post-content-item-img {
-  background: url("../../images/sample03.jpg") no-repeat center center;
-  background-size: cover;
-}
-.category-blog-section-post-wrapper .category-blog-section-post-content-item:first-child .category-blog-section-post-content-item-img {
-  background: url("../../images/sample01.jpg") no-repeat center center;
-  background-size: cover;
-}
-@media (max-width: 600px) {
-  .category-blog-section-post-wrapper .category-blog-section-post-content-item {
-    display: block;
-  }
-}
-@media (min-width: 601px) and (max-width: 904px) {
-  .category-blog-section-post-wrapper .category-blog-section-post-content-item {
-    grid-template-columns: 1fr 2fr;
-    gap: 24px;
-  }
-}
-.category-blog-section-post-wrapper .category-blog-section-post-content-item-img {
-  height: 168px;
-}
-@media (max-width: 600px) {
-  .category-blog-section-post-wrapper .category-blog-section-post-content-item-img {
-    width: 100%;
-    height: 320px;
-  }
-}
-.category-blog-section-post-wrapper .category-blog-section-post-content-item-img-category {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 80px;
-  height: 32px;
-  background-color: #1B224C;
-}
-.category-blog-section-post-wrapper .category-blog-section-post-content-item-img-category p {
-  font-style: normal;
-  font-variant: normal;
-  font-weight: normal;
-  font-size: 12.8px;
-  line-height: 16px;
-  font-family: YuGothic, "Yu Gothic", "游ゴシック", "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
-  letter-spacing: 0;
-  color: #FFFFFF;
-}
-.category-blog-section-post-wrapper .category-blog-section-post-content-item-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-@media (max-width: 600px) {
-  .category-blog-section-post-wrapper .category-blog-section-post-content-item-text {
-    margin-top: 32px;
-  }
-}
-@media (max-width: 600px) {
-  .category-blog-section-post-wrapper .category-blog-section-post-content-item-text-title {
-    margin-top: 16px;
-  }
-}
-.category-blog-section-post-wrapper .category-blog-section-post-content-item-text-title p {
+.single-news-wrapper h2 {
   font-style: normal;
   font-variant: normal;
   font-weight: bold;
   font-size: 24px;
-  line-height: 32px;
+  line-height: 40px;
   font-family: YuGothic, "Yu Gothic", "游ゴシック", "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
   letter-spacing: 0;
   color: #1B224C;
-  text-decoration: underline;
+  margin-top: 48px;
 }
-.category-blog-section-post-wrapper .category-blog-section-post-content-item-text-content {
-  height: 56px;
-}
-@media (max-width: 600px) {
-  .category-blog-section-post-wrapper .category-blog-section-post-content-item-text-content {
-    margin-top: 16px;
-  }
-}
-
-.category-news-main-wrapper {
-  background: url("../../images/category_news_main_2x.png") no-repeat center center;
-  background-size: cover;
-}
-.category-news-main-wrapper .category-news-main {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-.category-news-main-wrapper .category-news-main * {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: #FFFFFF;
-}
-.category-news-main-wrapper .category-news-main-title {
+.single-news-wrapper h3 {
   font-style: normal;
   font-variant: normal;
   font-weight: bold;
-  font-size: 48px;
-  line-height: 64px;
+  font-size: 19.2px;
+  line-height: 25.6px;
   font-family: YuGothic, "Yu Gothic", "游ゴシック", "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
   letter-spacing: 0;
-  color: #ffffff;
+  color: #1B224C;
+  border-left: 4px solid #1B224C;
+  margin-top: 40px;
+  padding-left: 8px;
+}
+.single-news-wrapper div, .single-news-wrapper img, .single-news-wrapper p, .single-news-wrapper ul, .single-news-wrapper a {
+  margin-top: 32px;
+}
+.single-news-wrapper img {
+  width: 400px;
+}
+.single-news-wrapper .mt-0 {
+  margin-top: 0 !important;
+}
+
+.single-news-content a {
+  display: inline-block;
+  color: #F5A623;
+  text-decoration: underline;
+}
+.single-news-content li {
+  padding-left: 32px;
+  position: relative;
+}
+.single-news-content li::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background-color: #F5A623;
+  border-radius: 50%;
+}
+
+.quote-wrapper {
+  display: flex;
+  background-color: #F8F8F8;
+  padding: 24px 24px 16px 0;
+}
+.quote-wrapper p {
+  margin-top: 0;
+}
+.quote-wrapper .p-quote-sign {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 8px 0 16px;
+  font-weight: medium;
+  font-size: 88px;
+  line-height: 72px;
+  color: #B4B4B4;
+}
+
+.single-news-wrapper {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  padding-top: 64px;
+  width: 100%;
 }
 @media (min-width: 601px) and (max-width: 904px) {
-  .category-news-main-wrapper .category-news-main-title {
-    font-size: 40px;
-    line-height: 56px;
+  .single-news-wrapper {
+    padding: 0 32px;
   }
 }
 @media (max-width: 600px) {
-  .category-news-main-wrapper .category-news-main-title {
-    font-size: 32px;
-    line-height: 48px;
+  .single-news-wrapper {
+    padding: 0 24px;
   }
 }
-
-.category-news-section-post-wrapper .category-news-section-post-content-item {
+.single-news-wrapper > div {
+  max-width: 904px;
+  width: 100%;
+}
+@media (min-width: 905px) {
+  .single-news-wrapper .single-news {
+    margin-top: 0;
+  }
+}
+@media (max-width: 904px) {
+  .single-news-wrapper .single-news {
+    display: block;
+  }
+}
+@media (min-width: 601px) and (max-width: 904px) {
+  .single-news-wrapper .single-news {
+    padding: 0 32px;
+  }
+}
+@media (max-width: 600px) {
+  .single-news-wrapper .single-news {
+    padding: 0 24px;
+  }
+}
+.single-news-wrapper .single-news-content-info-date {
   display: flex;
-  align-items: center;
-  height: 64px;
-  border-top: 1px solid #C3C3C3;
-}
-.category-news-section-post-wrapper .category-news-section-post-content-item:last-child {
-  border-bottom: 1px solid #C3C3C3;
-}
-.category-news-section-post-wrapper .category-news-section-post-content-item-text {
-  margin-left: 48px;
-}
-.category-news-section-post-wrapper .category-news-section-post-content-item-text p {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  width: 720px;
-  text-decoration: underline;
+  justify-content: flex-end;
 }
 
 .underline_sub_color {
