@@ -1,11 +1,11 @@
 @use '../common/define' as *;
 @use '../common/functions' as *;
 
-.home-main-wrapper {
-  background: url('../../images/home_main_2x.png') no-repeat center center;
+.category-blog-main-wrapper {
+  background: url('../../images/category-blog_main_2x.png') no-repeat center center;
   background-size: cover;
   
-  .home-main {
+  .category-blog-main {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -23,8 +23,8 @@
   }
 }
 
-.home-section-post-wrapper {
-  .home-section-post {
+.category-blog-section-post-wrapper {
+  .category-blog-section-post {
     &-content {
       &-item {
         display: grid;
@@ -33,19 +33,19 @@
         margin: mu(11) 0;
         @include reset-horizon-margins;
         &:nth-child(even) {
-          .home-section-post-content-item-img {
+          .category-blog-section-post-content-item-img {
             background: url('../../images/sample02.jpg') no-repeat center center;
             background-size: cover;
           }
         }
         &:nth-child(odd) {
-          .home-section-post-content-item-img {
+          .category-blog-section-post-content-item-img {
             background: url('../../images/sample03.jpg') no-repeat center center;
             background-size: cover;
           }
         }
         &:first-child {
-          .home-section-post-content-item-img {
+          .category-blog-section-post-content-item-img {
             background: url('../../images/sample01.jpg') no-repeat center center;
             background-size: cover;
           }
