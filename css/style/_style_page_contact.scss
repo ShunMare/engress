@@ -1,0 +1,212 @@
+@use '../common/define' as *;
+@use '../common/functions' as *;
+
+
+.page-contact-main-wrapper {
+  background: url('../../images/cta_2x.png') no-repeat center center;
+  background-size: cover;
+  
+  .page-contact-main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    * {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: map-get($global-colors, "font-sub");
+    }
+    
+    &-title{
+      @include h2-emphasize-style(map-get($global-colors, "font-sub"));
+    }
+  }
+}
+
+.page-contact-section-wrapper {
+  .page-contact-section {
+    max-width: map-get($max-width, "contact");
+    * {
+      display: flex;
+    }
+    a {
+      display: inline-block;
+      color: map-get($global-colors, "sub");
+      text-decoration: underline;
+    } 
+    .hidden {
+      display: none;
+    }
+    input {
+      width: 100%;
+      height: mu(6);
+      padding: mu(2) mu(3);
+      @include p-style(map-get($global-colors, "main"));
+      border: .5px solid map-get($global-colors, "main");
+      
+      &:focus {
+        outline: none;
+      }
+      &::placeholder {
+        color: map-get($global-colors, "quote");
+        opacity: 1;
+      }
+      &:-ms-input-placeholder {
+        color: map-get($global-colors, "quote");
+      }
+      &::-ms-input-placeholder {
+        color: map-get($global-colors, "quote");
+      }
+    }
+    input[type="radio"] {
+      display: inline-block;
+      position: relative;
+      padding: 0;
+      width: mu(2);
+      height: mu(2);
+      border-radius: 50%;
+      background-color: map-get($global-colors, "white");
+      cursor: pointer;
+      &::after {
+        content: "";
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: mu(1);
+        height: mu(1);
+        border-radius: 50%;
+        background-color: map-get($global-colors, "main");
+      }
+      &:checked::after {
+        display: block;
+      }
+    }
+    input[type="checkbox"] {
+      position: relative;
+      display: inline-block;
+      padding: 0;
+      width: mu(2);
+      height: mu(2);
+      background: map-get($global-colors, "white");
+      &::after {
+        position: absolute;
+        display: none;
+        content: "";
+        width: mu(2);
+        height: mu(1);
+        border: solid;
+        border-color: map-get($global-colors, "main");
+        border-width: 0 0 3px 3px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -60%) rotate(-45deg);
+      }
+      &:checked::after {
+        display: block;
+      }
+    }
+    textarea {
+      display: inline-block;
+      position: relative;
+      width: 100%;
+      height: mu(30);
+      padding: mu(2) mu(3);
+      border: .5px solid map-get($global-colors, "main");
+      resize: none;
+      @include p-style(map-get($global-colors, "main"));
+      &::placeholder {
+        color: map-get($global-colors, "quote");
+        opacity: 1;
+      }
+      &:-ms-input-placeholder {
+        color: map-get($global-colors, "quote");
+      }
+      &::-ms-input-placeholder {
+        color: map-get($global-colors, "quote");
+      }
+    }
+    .text-bold {
+      font-weight: bold;
+    }
+
+    &-info {
+      display: block;
+
+      &-input {
+        display: block;
+        margin-top: mu(3);
+        &:first-child {
+          margin-top: mu(5);
+        }
+        
+        &-label {
+          justify-content: flex-start;
+        }
+
+        input {
+          margin-top: mu(1);
+        }
+      }
+    }
+
+    &-option {
+      flex-direction: column;
+      margin-top: mu(4);
+      
+      &-button {
+        align-items: center;
+        margin-top: mu(2);
+        p {
+          margin-left: mu(2);
+        }
+      }
+    }
+
+    &-inquiry {
+      display: block;
+      margin-top: mu(4);
+      
+      textarea {
+        margin-top: mu(2);
+      }
+    }
+
+    &-policy {
+      display: flex;
+      justify-content: center;
+      margin-top: mu(4);
+    }
+
+    &-agreement {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: mu(4);
+      p {
+        margin-left: mu(1);
+      }
+    }
+
+    &-send {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: mu(6);
+      a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        background-color: map-get($global-colors, "main");
+        border-radius: 5px;
+        width: mu(25);
+        height: mu(6);
+        color: map-get($global-colors, "font-sub");
+        font-weight: bold;
+      }
+    }
+  }
+}
