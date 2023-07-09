@@ -1,0 +1,48 @@
+@use '../common/define' as *;
+@use '../common/functions' as *;
+
+
+.page-submission-success-main-wrapper {
+  background: url('../../images/cta_2x.png') no-repeat center center;
+  background-size: cover;
+  
+  .page-submission-success-main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    * {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: map-get($global-colors, "font-sub");
+    }
+    
+    &-title{
+      @include h2-emphasize-style(map-get($global-colors, "font-sub"));
+    }
+  }
+}
+
+.page-submission-success-section-wrapper {
+  .page-submission-success-section {
+    max-width: map-get($max-width, "contact");
+    * {
+      display: flex;
+      font-weight: medium;
+    }
+    
+    &-text {
+      justify-content: center;
+      p {
+        text-align: center;
+      }
+    }
+    a {
+      justify-content: center;
+      margin-top: mu(10);
+      color: map-get($global-colors, "main");
+      text-decoration: underline;
+    }
+  }
+}

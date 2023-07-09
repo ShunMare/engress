@@ -1803,6 +1803,65 @@ header .header-wrapper .header-right-button-contact > p {
   font-weight: bold;
 }
 
+.page-submission-success-main-wrapper {
+  background: url("../../images/cta_2x.png") no-repeat center center;
+  background-size: cover;
+}
+.page-submission-success-main-wrapper .page-submission-success-main {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.page-submission-success-main-wrapper .page-submission-success-main * {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #FFFFFF;
+}
+.page-submission-success-main-wrapper .page-submission-success-main-title {
+  font-style: normal;
+  font-variant: normal;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 64px;
+  font-family: YuGothic, "Yu Gothic", "游ゴシック", "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+  letter-spacing: 0;
+  color: #FFFFFF;
+}
+@media (min-width: 601px) and (max-width: 904px) {
+  .page-submission-success-main-wrapper .page-submission-success-main-title {
+    font-size: 40px;
+    line-height: 56px;
+  }
+}
+@media (max-width: 600px) {
+  .page-submission-success-main-wrapper .page-submission-success-main-title {
+    font-size: 32px;
+    line-height: 48px;
+  }
+}
+
+.page-submission-success-section-wrapper .page-submission-success-section {
+  max-width: 696px;
+}
+.page-submission-success-section-wrapper .page-submission-success-section * {
+  display: flex;
+  font-weight: medium;
+}
+.page-submission-success-section-wrapper .page-submission-success-section-text {
+  justify-content: center;
+}
+.page-submission-success-section-wrapper .page-submission-success-section-text p {
+  text-align: center;
+}
+.page-submission-success-section-wrapper .page-submission-success-section a {
+  justify-content: center;
+  margin-top: 80px;
+  color: #1B224C;
+  text-decoration: underline;
+}
+
 .category-blog-main-wrapper {
   background: url("../../images/category-blog_main_2x.png") no-repeat center center;
   background-size: cover;
