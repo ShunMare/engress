@@ -6,8 +6,10 @@
 @use 'style/style_page_courses';
 @use 'style/style_page_contact';
 @use 'style/style_page_submission_success';
-@use 'style/style_category_blog';
-@use 'style/style_category_news';
+@use 'style/style_archive_blog';
+@use 'style/style_archive_news';
+@use 'style/style_taxonomy_blog_category';
+@use 'style/style_taxonomy_news_category';
 @use 'style/style_single_blog';
 @use 'style/style_single_news';
 @use 'common/utilities'

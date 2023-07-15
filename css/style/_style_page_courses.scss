@@ -2,7 +2,7 @@
 @use '../common/functions' as *;
 
 .page-courses-main-wrapper {
-  background: url('../../images/page_courses_main_2x.png') no-repeat center center;
+  background: url('../images/page_courses_main_2x.png') no-repeat center center;
   background-size: cover;
   
   .page-courses-main {
@@ -121,7 +121,7 @@
           height: mu(59);
           border: .5px solid map-get($global-colors, "main");
           border-top: none;
-
+          
           &-price {
             display: flex;
             justify-content: center;
@@ -132,6 +132,9 @@
               &:first-child {
                 @include p-large-style(map-get($global-colors, "main"));
               }
+            }
+            .font-sub-color {
+              color: map-get($global-colors, "sub") !important;
             }
           }
 

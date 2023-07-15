@@ -1,0 +1,51 @@
+@use '../common/define' as *;
+@use '../common/functions' as *;
+
+.taxonomy-news-category-main-wrapper {
+  background: url('../images/news_main_2x.png') no-repeat center center;
+  background-size: cover;
+  
+  .taxonomy-news-category-main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    * {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: map-get($global-colors, "font-sub");
+    }
+    
+    &-title{
+      @include h2-emphasize-style(map-get($global-colors, "white"));
+    }
+  }
+}
+
+.taxonomy-news-category-section-post-wrapper {
+  .taxonomy-news-category-section-post {
+    &-content {
+      &-item {
+        display: flex;
+        align-items: center;
+        height: mu(8);
+        border-top: 1px solid map-get($global-colors, "separate");
+        &:last-child {
+          border-bottom: 1px solid map-get($global-colors, "separate");
+        }
+
+        &-text {
+          margin-left: mu(6);
+          p {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: mu(90);
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
