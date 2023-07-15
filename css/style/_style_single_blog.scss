@@ -220,8 +220,14 @@
           min-height: mu(9);
         }
         a {
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-overflow: ellipsis;
           @include p-medium-style(map-get($global-colors, "main"));
           text-decoration: underline;
+          word-break: break-word;
         }
       }
     }
@@ -257,10 +263,15 @@
       margin-top: mu(3);
     }
     &-title {
-      margin-top: mu(3);
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
       @include p-style(map-get($global-colors, "font-main"));
       font-weight: bold;
       text-decoration: underline;
+      word-break: break-word;
     }
   }
 }

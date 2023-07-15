@@ -1,69 +1,12 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html <?php language_attributes(); ?>>
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Engress</title>
-  <meta name="description" content="日本人へのTOEFL指導歴豊かな講師陣のコーチング型TOEFLスクール">
-  <!-- <link rel="stylesheet" href="css/style.min.css"> -->
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
-  <link rel="stylesheet" href="https://unpkg.com/scroll-hint@latest/css/scroll-hint.css">
+  <?php get_header(); ?>
 </head>
-<body>
-  <header>
-    <div class="header-wrapper">
-      <div class="header-left">
-        <a  href="index.html" class="header-left-logo">
-          <img src="images/logo.png" alt="Engressのロゴ">
-        </a>
-        <ul class="header-left-nav none-tablet-landscape-phone">
-          <li><a href="index.html"><p>ホーム</p></a></li>
-          <li><a href="category-news.html"><p>お知らせ</p></a></li>
-          <li><a href="category-blog.html"><p>ブログ</p></a></li>
-          <li><a href="page-courses.html"><p>コース・料金</p></a></li>
-        </ul>
-      </div>
-      <div class="header-right none-tablet-landscape-phone">
-        <div class="header-right-contact">
-          <div class="header-right-contact-time">
-            <p>平日08:00〜20:00</p>
-          </div>
-          <div class="header-right-contact-call">
-            <img src="images/phone_black.svg" alt="電話のロゴ">
-            <p>0123-456-7890</p>
-          </div>
-        </div>
-        <div class="header-right-button">
-          <a href="page-contact.html" class="header-right-button-documents">
-            <p>資料請求</p>
-          </a>
-          <a href="page-contact.html" class="header-right-button-contact">
-            <p>お問い合わせ</p>
-          </a>
-        </div>
-      </div>
-      <div class="header-hamburger-wrapper none-tablet-landscape-desktop">
-        <div id="header-hamburger-toggle">
-          <div class="header-hamburger-toggle-content">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </div>
-      </div>
-      <nav class="header-nav">
-        <ul class="header-nav-content">
-          <li><a class="nav-link" href="index.html"><p>ホーム</p></a></li>
-          <li><a class="nav-link" href="category-news.html"><p>お知らせ</p></a></li>
-          <li><a class="nav-link" href="category-blog.html"><p>ブログ</p></a></li>
-          <li><a class="nav-link" href="page-courses.html"><p>コース・料金</p></a></li>
-          <li><a class="nav-link" href="page-contact.html"><p>資料請求</p></a></li>
-          <li><a class="nav-link" href="page-contact.html"><p>お問い合わせ</p></a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+
+<body <?php body_class(); ?>>
+  <?php get_template_part('includes/header') ?>
   <div class="wrapper">
     <main class="page-courses-main-wrapper">
       <div class="page-courses-main">
@@ -72,13 +15,7 @@
         </h2>
       </div>
     </main>
-    <div class="common-breadcrumb-wrapper">
-      <ul class="common-breadcrumb">
-        <li><a href="index.html"><p>ホーム</p></a></li>
-        <span><p>></p></span>
-        <li><a href="#"><p>コース・料金</p></a></li>
-      </ul>
-    </div>
+    <?php get_template_part('includes/common-breadcrumb'); ?>
     <section class="page-courses-section-pricing-structure-wrapper">
       <div class="page-courses-section-pricing-structure">
         <h2 class="page-courses-section-pricing-structure-title">
@@ -104,6 +41,23 @@
         </div>
       </div>
     </section>
+    <?php
+    $args = array(
+      'post_type' => 'price',
+      'posts_per_page' => 5,
+    );
+    $query = new WP_Query($args);
+    $prices = array();
+    if ($query->have_posts()) {
+      while ($query->have_posts()) {
+        $query->the_post();
+        $prices[] = array(
+          'price' => get_post_meta(get_the_ID(), 'price', true)
+        );
+      }
+    }
+    wp_reset_postdata();
+    ?>
     <section class="page-courses-section-pricing-table-wrapper">
       <div class="page-courses-section-pricing-table">
         <h2 class="page-courses-section-pricing-table-title">
@@ -116,7 +70,7 @@
             </div>
             <div class="page-courses-section-pricing-table-panel-list-body">
               <div class="page-courses-section-pricing-table-panel-list-body-price">
-                <p>59,000円~</p>
+                <?php echo "<p>".number_format($prices[3]['price'])."円~</p>"; ?>
                 <p>*月額（税抜価格）</p>
               </div>
               <ul class="page-courses-section-pricing-table-panel-list-body-item">
@@ -147,7 +101,7 @@
             </div>
             <div class="page-courses-section-pricing-table-panel-list-body">
               <div class="page-courses-section-pricing-table-panel-list-body-price">
-                <p>75,000円~</p>
+                <?php echo "<p>".number_format($prices[2]['price'])."円~</p>"; ?>
                 <p>*月額（税抜価格）</p>
               </div>
               <ul class="page-courses-section-pricing-table-panel-list-body-item">
@@ -185,7 +139,7 @@
             </div>
             <div class="page-courses-section-pricing-table-panel-list-body">
               <div class="page-courses-section-pricing-table-panel-list-body-price">
-                <p>95,000円~</p>
+                <?php echo '<p class="font-sub-color">'.number_format($prices[1]['price'])."円~</p>"; ?>
                 <p>*月額（税抜価格）</p>
               </div>
               <ul class="page-courses-section-pricing-table-panel-list-body-item">
@@ -211,7 +165,7 @@
                   <div class="page-courses-section-pricing-table-panel-list-body-item-list-check">
                     <span></span>
                   </div>
-                  <p>月二回の模試（解説 付き）  </p>
+                  <p>月二回の模試（解説 付き） </p>
                 </li>
                 <li class="page-courses-section-pricing-table-panel-list-body-item-list">
                   <div class="page-courses-section-pricing-table-panel-list-body-item-list-check">
@@ -228,7 +182,7 @@
             </div>
             <div class="page-courses-section-pricing-table-panel-list-body">
               <div class="page-courses-section-pricing-table-panel-list-body-price">
-                <p>60,000円~</p>
+                <?php echo "<p>".number_format($prices[0]['price'])."円~</p>"; ?>
                 <p>*月額（税抜価格）</p>
               </div>
               <ul class="page-courses-section-pricing-table-panel-list-body-item">
@@ -241,83 +195,11 @@
         </ul>
       </div>
     </section>
-    <section class="common-request-wrapper">
-      <div class="common-request">
-        <h2 class="common-request-title">
-          まずは無料で資料請求から
-        </h2>
-        <div class="common-request-content">
-          <div class="common-request-content-button">
-            <a href="page-contact.html" class="common-request-content-button-content">
-              <p>資料請求</p>
-            </a>
-          </div>
-          <a href="page-contact.html" class="common-request-content-question">
-            <p>お問い合わせ</p>
-          </a>
-        </div>
-      </div>
-    </section>
-    <section class="common-call-wrapper">
-      <div class="common-call">
-        <div class="common-call-content">
-          <div class="common-call-content-text">
-            <p>お電話でのお問い合わせはこちら</p>
-          </div>
-          <div class="common-call-content-number">
-            <p>0123-456-7890</p>
-          </div>
-          <div class="common-call-content-when">
-            <p>平日 08:00~20:00</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <footer>
-      <div class="footer-main-wrapper">
-        <div class="footer-main">
-          <ul class="footer-main-nav">
-            <li>
-              <a href="index.html"><p>ホーム</p></a>
-            </li>
-            <li>
-              <div class="vertical-line"></div>
-              <a href="category-news.html"><p>お知らせ</p></a>
-            </li>
-            <li>
-              <div class="vertical-line"></div>
-              <a href="category-blog.html"><p>ブログ</p></a>
-            </li>
-            <li>
-              <div class="vertical-line"></div>
-              <a href="page-courses.html"><p>コース・料金</p></a>
-            </li>
-          </ul>
-          <div class="footer-main-info">
-            <a href="index.html" class="footer-main-info-logo">
-              <img src="images/logo.png" alt="Engressのロゴ">
-            </a>
-            <div class="footer-main-info-text">
-              <div class="footer-main-info-text-call">
-                <img src="images/phone_white.svg" alt="電話マーク">
-                <p>0123-456-7890</p>
-              </div>
-              <div class="footer-main-info-text-when">
-                <p>平日08:00~20:00</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="footer-copyright">
-        <div class="footer-copyright-text">
-          <p>&copy; 2020 Engress.</p>
-        </div>
-      </div>
-    </footer>
-  </div>  
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://unpkg.com/scroll-hint@latest/js/scroll-hint.min.js"></script>
-  <script src="js/script.js"></script>
+    <?php get_template_part('includes/common-request'); ?>
+    <?php get_template_part('includes/common-call'); ?>
+    <?php get_template_part('includes/footer'); ?>
+  </div>
+  <?php get_footer(); ?>
 </body>
+
 </html>

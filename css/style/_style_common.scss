@@ -45,11 +45,15 @@ section {
   }
 }
 
+h1, h2, h3, p, a {
+  word-break: break-word;
+}
+
 h2 {
   @include h2-style(map-get($global-colors, "font-main"));
 }
 
-p , li, a {
+p , li, a ,label {
   @include p-style(map-get($global-colors, "font-main"));
 }
 
@@ -96,7 +100,7 @@ li {
 
 .common-request-wrapper {
   margin-top: mu(15);
-  background: url("../../images/cta_2x.png") no-repeat center center;
+  background: url("../images/cta_2x.png") no-repeat center center;
   background-size: cover;
 
   .common-request {
@@ -193,15 +197,21 @@ li {
       width: mu(6);
       height: mu(6);
       border: 1px solid map-get($global-colors, 'main');
-      &:first-child {
-        background-color: map-get($global-colors, "main");
-        p {
-          color: map-get($global-colors, "font-sub");
-        }
-      }
-      &:nth-child(4) {
-        border: none;
-      }
     }
+    &-box-bo-border {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 mu(2);
+      width: mu(6);
+      height: mu(6);
+    }
+  }
+}
+
+.current-page {
+  background-color: map-get($global-colors, "main");
+  p {
+    color: map-get($global-colors, "font-sub");
   }
 }

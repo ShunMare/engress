@@ -1,11 +1,11 @@
 @use '../common/define' as *;
 @use '../common/functions' as *;
 
-.category-news-main-wrapper {
-  background: url('../../images/category_news_main_2x.png') no-repeat center center;
+.archive-news-main-wrapper {
+  background: url('../images/news_main_2x.png') no-repeat center center;
   background-size: cover;
   
-  .category-news-main {
+  .archive-news-main {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -23,8 +23,8 @@
   }
 }
 
-.category-news-section-post-wrapper {
-  .category-news-section-post {
+.archive-news-section-post-wrapper {
+  .archive-news-section-post {
     &-content {
       &-item {
         display: flex;

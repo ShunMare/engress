@@ -1,0 +1,105 @@
+@use '../common/define' as *;
+@use '../common/functions' as *;
+
+.taxonomy-blog-category-main-wrapper {
+  background: url('../images/blog_main_2x.png') no-repeat center center;
+  background-size: cover;
+  
+  .taxonomy-blog-category-main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    * {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: map-get($global-colors, "font-sub");
+    }
+    
+    &-title{
+      @include h2-emphasize-style(map-get($global-colors, "white"));
+    }
+  }
+}
+.taxonomy-blog-category-section-post-wrapper {
+  .taxonomy-blog-category-section-post {
+    &-content {
+      &-item {
+        display: grid;
+        grid-template-columns: 1fr 2.5fr;
+        gap: mu(6);
+        margin: mu(11) 0;
+        @include reset-horizon-margins;
+        @include respond(phone) {
+          display: block;
+        }
+        @include respond(tablet-portrait) {
+          grid-template-columns: 1fr 2fr;
+          gap: mu(3);
+        }
+
+        &-img {
+          position: relative;
+          height: mu(21);
+          @include respond(phone) {
+            width: 100%;
+            height: mu(40);
+          }
+          &-category {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: mu(10);
+            height: mu(4);
+            background-color: map-get($global-colors, "main");
+            p {
+              @include p-small-style(map-get($global-colors, "font-sub"));
+            }
+          }
+        }
+
+        &-text {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          @include respond(phone) {
+            margin-top: mu(4);
+          }
+
+          &-title {
+            @include respond(phone) {
+              margin-top: mu(2);
+            }
+            p {
+              @include p-large-style(map-get($global-colors, "main"));
+              text-decoration: underline;
+              display: -webkit-box;
+              -webkit-line-clamp: 2;
+              -webkit-box-orient: vertical;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            }
+          }
+
+          &-content {
+            p {
+              display: -webkit-box;
+              -webkit-line-clamp: 2;
+              -webkit-box-orient: vertical;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            }
+            @include respond(phone) {
+              margin-top: mu(2);
+            }
+            height: mu(7);
+          }
+        }
+      }
+    }
+  }
+}

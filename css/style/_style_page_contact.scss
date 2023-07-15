@@ -3,7 +3,7 @@
 
 
 .page-contact-main-wrapper {
-  background: url('../../images/cta_2x.png') no-repeat center center;
+  background: url('../images/cta_2x.png') no-repeat center center;
   background-size: cover;
   
   .page-contact-main {
@@ -37,6 +37,12 @@
     } 
     .hidden {
       display: none;
+    }
+    form {
+      display: block;
+    }
+    label {
+      display: flex;
     }
     input {
       width: 100%;
@@ -146,6 +152,10 @@
           justify-content: flex-start;
         }
 
+        p:not(.page-contact-section-info-input-label) {
+          line-height: 0;
+          display: block;
+        }
         input {
           margin-top: mu(1);
         }
@@ -155,7 +165,15 @@
     &-option {
       flex-direction: column;
       margin-top: mu(4);
-      
+      p:not(.page-contact-section-option-title) {
+        display: block;
+      }
+      label {
+        display: flex;
+        align-items: center;
+        margin-top: mu(2);
+      }
+
       &-button {
         align-items: center;
         margin-top: mu(2);
@@ -195,10 +213,11 @@
       justify-content: center;
       align-items: center;
       margin-top: mu(6);
-      a {
+      input {
         display: flex;
         justify-content: center;
         align-items: center;
+        padding: 0;
         text-decoration: none;
         background-color: map-get($global-colors, "main");
         border-radius: 5px;
@@ -206,6 +225,7 @@
         height: mu(6);
         color: map-get($global-colors, "font-sub");
         font-weight: bold;
+        cursor: pointer;
       }
     }
   }
