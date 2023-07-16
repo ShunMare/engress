@@ -29,7 +29,7 @@
           ?>
         </h2>
         <ul class="taxonomy-news-category-section-post-content">
-        <?php
+          <?php
           $paged = get_query_var('paged') ? get_query_var('paged') : 1;
           $args = array(
             'post_type' => 'news',
@@ -54,7 +54,13 @@
                 </div>
                 <div class="taxonomy-news-category-section-post-content-item-text">
                   <a href="<?php the_permalink(); ?>">
-                    <p><?php the_title(); ?></p>
+                    <?php
+                    $title = get_the_title();
+                    if (!empty($title)) : ?>
+                      <p><?php echo $title; ?></p>
+                    <?php else : ?>
+                      <p>タイトルのない投稿</p>
+                    <?php endif; ?>
                   </a>
                 </div>
               </li>

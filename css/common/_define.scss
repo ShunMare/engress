@@ -13,13 +13,15 @@ $global-colors: (
   'black': #00000029,
   'share': #305097,
   'twitter': #00ACED,
+  'red': #B70000
 );
 
 $max-width: (
   'header': $base-unit * 160,
   'content': $base-unit * 113,
   'nav': $base-unit * 50,
-  'contact': $base-unit * 87
+  'contact': $base-unit * 87,
+  'single-blog-main': $base-unit * 76
 );
 
 $opacity: (

@@ -17,34 +17,46 @@
             <p>></p>
           </span>
         <?php endif; ?>
-        <li><p><?php the_title(); ?></p></li>
+        <?php
+        $title = get_the_title();
+        if (!empty($title)) : ?>
+          <li><p><?php echo $title; ?></p></li>
+        <?php else : ?>
+          <li><p>タイトルのない投稿</p></li>
+        <?php endif; ?>
       <?php else : ?>
-        <li><p><?php single_cat_title(); ?></p></li>
+        <li>
+          <p><?php single_cat_title(); ?></p>
+        </li>
       <?php endif; ?>
     <?php elseif (is_archive()) : ?>
       <?php
       $post_type = get_post_type();
       $post_type_object = get_post_type_object($post_type);
-      if($post_type_object->labels->singular_name == 'News') {
+      if ($post_type_object->labels->singular_name == 'news') {
         echo '<li><p>お知らせ</p></li>';
-      } elseif($post_type_object->labels->singular_name == 'blog') {
+      } elseif ($post_type_object->labels->singular_name == 'blog') {
         echo '<li><p>ブログ</p></li>';
       }
       ?>
     <?php elseif (is_page()) : ?>
       <?php
-      if(get_the_title() == 'courses') {
+      if (get_the_title() == 'courses') {
         echo '<li><p>コース・料金</p></li>';
-      } elseif(get_the_title() == 'contact') {
+      } elseif (get_the_title() == 'contact') {
         echo '<li><p>お問い合わせ・資料請求</p></li>';
-      } elseif(get_the_title() == 'submission-success') {
+      } elseif (get_the_title() == 'submission-success') {
         echo '<li><p>送信完了</p></li>';
       }
       ?>
     <?php elseif (is_search()) : ?>
-      <li><p>検索結果：<?php echo get_search_query(); ?></p></li>
+      <li>
+        <p>検索結果：<?php echo get_search_query(); ?></p>
+      </li>
     <?php elseif (is_404()) : ?>
-      <li><p>お探しのページは見つかりませんでした。</p></li>
+      <li>
+        <p>お探しのページは見つかりませんでした。</p>
+      </li>
     <?php endif; ?>
   </ul>
 </div>

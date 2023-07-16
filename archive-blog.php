@@ -42,26 +42,32 @@
               <li class="archive-blog-section-post-content-item">
                 <div class="archive-blog-section-post-content-item-img">
                   <?php
-                  if (has_post_thumbnail()) {
+                  if (has_post_thumbnail() && get_the_post_thumbnail_url() != "") {
                     echo '<img src="' . get_the_post_thumbnail_url() . '" alt="ブログ投稿画像">';
                   } else {
                     echo '<img src="' . get_template_directory_uri() . '/images/noimage.png"  alt="イメージなし">';
                   }
                   ?>
-                    <?php
-                    if (!empty($categories)) {
-                      echo '<div class="archive-blog-section-post-content-item-img-category">';
-                      echo '<p>' . esc_html($categories[0]->name) . '</p>';
-                      echo '</div>';
-                    }
-                    ?>
+                  <?php
+                  if (!empty($categories)) {
+                    echo '<div class="archive-blog-section-post-content-item-img-category">';
+                    echo '<p>' . esc_html($categories[0]->name) . '</p>';
+                    echo '</div>';
+                  }
+                  ?>
                 </div>
                 <div class="archive-blog-section-post-content-item-text">
                   <div class="archive-blog-section-post-content-item-text-date">
                     <p><?php echo get_the_date(); ?></p>
                   </div>
                   <a href="<?php the_permalink(); ?>" class="archive-blog-section-post-content-item-text-title">
-                    <p><?php the_title(); ?></p>
+                    <?php
+                    $title = get_the_title();
+                    if (!empty($title)) : ?>
+                      <p><?php echo $title; ?></p>
+                    <?php else : ?>
+                      <p>タイトルのない投稿</p>
+                    <?php endif; ?>
                   </a>
                   <div class="archive-blog-section-post-content-item-text-content">
                     <p><?php echo wp_trim_words(get_the_content(), 60, '…') ?></p>

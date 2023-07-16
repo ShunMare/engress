@@ -52,10 +52,10 @@
               <li class="taxonomy-blog-category-section-post-content-item">
                 <div class="taxonomy-blog-category-section-post-content-item-img">
                   <?php
-                  if (has_post_thumbnail()) {
+                  if (has_post_thumbnail() && get_the_post_thumbnail_url() != "") {
                     echo '<img src="' . get_the_post_thumbnail_url() . '" alt="">';
                   } else {
-                    echo '<img src="'. get_template_directory_uri() . '/images/noimage.png"  alt="イメージなし">';
+                    echo '<img src="' . get_template_directory_uri() . '/images/noimage.png"  alt="イメージなし">';
                   }
                   ?>
                   <div class="taxonomy-blog-category-section-post-content-item-img-category">
@@ -71,7 +71,13 @@
                     <p><?php echo get_the_date(); ?></p>
                   </div>
                   <a href="<?php the_permalink(); ?>" class="taxonomy-blog-category-section-post-content-item-text-title">
-                    <p><?php the_title(); ?></p>
+                    <?php
+                    $title = get_the_title();
+                    if (!empty($title)) : ?>
+                      <p><?php echo $title; ?></p>
+                    <?php else : ?>
+                      <p>タイトルのない投稿</p>
+                    <?php endif; ?>
                   </a>
                   <div class="taxonomy-blog-category-section-post-content-item-text-content">
                     <p><?php echo wp_trim_words(get_the_content(), 60, '…') ?></p>

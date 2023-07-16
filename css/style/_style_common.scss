@@ -84,13 +84,19 @@ li {
     width: map-get($max-width, "content");
     @include respond(tablet-portrait-phone) {
       padding: 0 mu(3);
-    }      
+    }
     li {
       margin: mu(1);
       text-decoration: underline;
       * {
         @include p-small-style(map-get($global-colors,"main"));
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
+      
       &:last-child {
         text-decoration: none;
       }

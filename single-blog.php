@@ -16,13 +16,19 @@
     <div class="single-blog-wrapper">
       <div class="single-blog">
         <div class="single-blog-content mt-0">
-          <h1><?php the_title(); ?></h1>
+          <?php
+          $title = get_the_title();
+          if (!empty($title)) : ?>
+            <h1><?php echo $title; ?></h1>
+          <?php else : ?>
+            <h1>タイトルのない投稿</h1>
+          <?php endif; ?>
           <?php get_template_part('includes/blog-info') ?>
           <?php
-          if (has_post_thumbnail()) {
+          if (has_post_thumbnail() && get_the_post_thumbnail_url() != "") {
             echo '<img src="' . get_the_post_thumbnail_url() . '" alt="メイン画像">';
           } else {
-            echo '<img src="'. get_template_directory_uri() . '/images/noimage.png"  alt="イメージなし">';
+            echo '<img src="' . get_template_directory_uri() . '/images/noimage.png"  alt="イメージなし">';
           }
           ?>
           <div class="single-blog-content-text">
@@ -48,27 +54,33 @@
                   <div class="single-blog-content-text-recommend-post">
                     <div class="post-img mt-0">
                       <?php
-                      if (has_post_thumbnail()) {
+                      if (has_post_thumbnail() && get_the_post_thumbnail_url() != "") {
                         echo '<img class="mt-0" src="' . get_the_post_thumbnail_url() . '" alt="授業風景">';
                       } else {
-                        echo '<img class="mt-0" src="'. get_template_directory_uri() . '/images/noimage.png"  alt="イメージなし">';
+                        echo '<img class="mt-0" src="' . get_template_directory_uri() . '/images/noimage.png"  alt="イメージなし">';
                       }
                       ?>
-                      <p class="post-img-category mt-0">
                         <?php
                         $categories = get_the_terms(get_the_ID(), 'blog-category');
                         if (!empty($categories)) {
+                          echo '<p class="post-img-category mt-0">';
                           echo esc_html($categories[0]->name);
+                          echo '</p>';
                         }
                         ?>
-                      </p>
                     </div>
                     <div class="post-text mt-0">
                       <p class="post-text-date mt-0">
                         <?php the_time('Y-m-d'); ?>
                       </p>
                       <a href="<?php the_permalink(); ?>" class="post-text-title">
-                        <?php the_title(); ?>
+                        <?php
+                        $title = get_the_title();
+                        if (!empty($title)) : ?>
+                          <p><?php echo $title; ?></p>
+                        <?php else : ?>
+                          <p>タイトルのない投稿</p>
+                        <?php endif; ?>
                       </a>
                     </div>
                   </div>

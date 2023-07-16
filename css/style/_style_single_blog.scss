@@ -1,21 +1,25 @@
-@use '../common/define' as *;
-@use '../common/functions' as *;
-
+@use "../common/define" as *;
+@use "../common/functions" as *;
 
 .single-blog-wrapper {
   h1 {
-    @include h1-blog-style(map-get($global-colors, "main"))
+    @include h1-blog-style(map-get($global-colors, "main"));
   }
   h2 {
-    @include h2-blog-style(map-get($global-colors, "main"))
+    @include h2-blog-style(map-get($global-colors, "main"));
   }
   h3 {
-    @include h3-blog-style(map-get($global-colors, "main"))
+    @include h3-blog-style(map-get($global-colors, "main"));
   }
-  div, img , p, ul, a {
+  div,
+  img,
+  p,
+  ul,
+  a {
     margin-top: mu(4);
   }
   img {
+    max-width: map-get($max-width, "single-blog-main");
     width: 100%;
   }
   .mt-0 {
@@ -24,6 +28,7 @@
 }
 
 .single-blog-content {
+  max-width: map-get($max-width, "single-blog-main");
   a {
     display: inline-block;
     color: map-get($global-colors, "sub");
@@ -34,7 +39,7 @@
     position: relative;
   }
   li::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 5px;
     left: 0;
@@ -56,7 +61,7 @@
     }
   }
   li::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 9px;
     left: 10px;
@@ -111,7 +116,7 @@
 }
 
 .single-blog-wrapper {
-  display:flex;
+  display: flex;
   justify-content: center;
   overflow: hidden;
   padding-top: mu(8);
@@ -124,13 +129,13 @@
   }
 
   > div {
-    max-width: map-get($max-width, 'content');
+    max-width: map-get($max-width, "content");
     width: 100%;
   }
 
   .single-blog {
     display: grid;
-    grid-template-columns: 1fr .4fr;
+    grid-template-columns: 1fr 0.4fr;
     gap: mu(4);
     @include respond(tablet-portrait-desktop) {
       margin-top: 0;
@@ -144,16 +149,17 @@
     @include respond(phone) {
       padding: 0 mu(3);
     }
-  
+
     &-content {
       &-info {
         display: flex;
         justify-content: space-between;
         margin-top: mu(3);
-        div, p {
+        div,
+        p {
           margin-top: 0;
         }
-        
+
         &-share {
           display: flex;
           justify-content: flex-start;
@@ -190,7 +196,7 @@
       }
     }
 
-    &-side{
+    &-side {
       @include respond(tablet-portrait-phone) {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -210,8 +216,9 @@
         grid-template-columns: 1fr 1.4fr;
         gap: mu(2);
         margin-top: mu(5);
-  
-        img, a {
+
+        img,
+        a {
           display: flex;
           align-items: flex-start;
           margin-top: 0;
@@ -238,7 +245,7 @@
   display: grid;
   grid-template-columns: 1fr 1.7fr;
   gap: mu(4);
-  
+
   .post-img {
     position: relative;
     background-size: cover;
@@ -248,16 +255,24 @@
       height: 100%;
     }
     p {
-      display: inline-block;
+      display: -webkit-box;
       position: absolute;
       top: 0;
       left: 0;
-      padding: mu(1) mu(2);
+      padding: 0 mu(1);
       background-color: map-get($global-colors, "main");
       @include p-small-style(map-get($global-colors, "font-sub"));
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 50%;
+      text-align: center;
+      height: 2em;
+      line-height: 2em;
     }
   }
-  
+
   .post-text {
     > * {
       margin-top: mu(3);

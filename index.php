@@ -318,10 +318,10 @@
                   <div class="index-section-blog-content-post">
                     <div class="index-section-blog-content-post-img">
                       <?php
-                      if (has_post_thumbnail()) {
+                      if (has_post_thumbnail() && get_the_post_thumbnail_url() != "") {
                         echo '<img src="' . get_the_post_thumbnail_url() . '" alt="">';
                       } else {
-                        echo '<img src="'. get_template_directory_uri() . '/images/noimage.png"  alt="イメージなし">';
+                        echo '<img src="' . get_template_directory_uri() . '/images/noimage.png"  alt="イメージなし">';
                       }
                       ?>
                       <div class="index-section-blog-content-post-img-category">
@@ -334,7 +334,13 @@
                     </div>
                     <div class="index-section-blog-content-post-text">
                       <a href="<?php the_permalink(); ?>" class="index-section-blog-content-post-text-title">
-                        <p><?php the_title(); ?></p>
+                        <?php
+                        $title = get_the_title();
+                        if (!empty($title)) : ?>
+                          <p><?php echo $title; ?></p>
+                        <?php else : ?>
+                          <p>タイトルのない投稿</p>
+                        <?php endif; ?>
                       </a>
                       <div class="index-section-blog-content-post-text-date">
                         <p><?php echo get_the_date(); ?></p>
@@ -370,7 +376,13 @@
                       <p><?php echo get_the_date(); ?></p>
                     </div>
                     <a href="<?php the_permalink(); ?>" class="index-section-notice-content-post-title">
-                      <p><?php the_title(); ?></p>
+                      <?php
+                      $title = get_the_title();
+                      if (!empty($title)) : ?>
+                        <p><?php echo $title; ?></p>
+                      <?php else : ?>
+                        <p>タイトルのない投稿</p>
+                      <?php endif; ?>
                     </a>
                   </div>
               <?php
