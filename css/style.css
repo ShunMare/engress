@@ -239,6 +239,11 @@ li:last-child {
   font-family: YuGothic, "Yu Gothic", "游ゴシック", "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
   letter-spacing: 0;
   color: #1B224C;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .common-breadcrumb-wrapper .common-breadcrumb li:last-child {
   text-decoration: none;
@@ -1780,6 +1785,21 @@ header .header-wrapper .header-right-button-contact > p {
 .page-contact-section-wrapper .page-contact-section-info-input-label {
   justify-content: flex-start;
 }
+.page-contact-section-wrapper .page-contact-section-info-input p span {
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  font-family: YuGothic, "Yu Gothic", "游ゴシック", "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+  letter-spacing: 0;
+  color: #B70000;
+}
+@media (max-width: 600px) {
+  .page-contact-section-wrapper .page-contact-section-info-input p span {
+    line-height: 16px;
+  }
+}
 .page-contact-section-wrapper .page-contact-section-info-input p:not(.page-contact-section-info-input-label) {
   line-height: 0;
   display: block;
@@ -1820,12 +1840,28 @@ header .header-wrapper .header-right-button-contact > p {
 }
 .page-contact-section-wrapper .page-contact-section-agreement {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
   margin-top: 32px;
 }
 .page-contact-section-wrapper .page-contact-section-agreement p {
   margin-left: 8px;
+}
+.page-contact-section-wrapper .page-contact-section-agreement .error {
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  font-family: YuGothic, "Yu Gothic", "游ゴシック", "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+  letter-spacing: 0;
+  color: #B70000;
+}
+@media (max-width: 600px) {
+  .page-contact-section-wrapper .page-contact-section-agreement .error {
+    line-height: 16px;
+  }
 }
 .page-contact-section-wrapper .page-contact-section-send {
   display: flex;
@@ -1979,6 +2015,10 @@ header .header-wrapper .header-right-button-contact > p {
     height: 320px;
   }
 }
+.archive-blog-section-post-wrapper .archive-blog-section-post-content-item-img img {
+  width: 100%;
+  height: 100%;
+}
 .archive-blog-section-post-wrapper .archive-blog-section-post-content-item-img-category {
   display: flex;
   justify-content: center;
@@ -1999,6 +2039,11 @@ header .header-wrapper .header-right-button-contact > p {
   font-family: YuGothic, "Yu Gothic", "游ゴシック", "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
   letter-spacing: 0;
   color: #FFFFFF;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .archive-blog-section-post-wrapper .archive-blog-section-post-content-item-text {
   display: flex;
@@ -2190,6 +2235,13 @@ header .header-wrapper .header-right-button-contact > p {
   background-color: #1B224C;
 }
 .taxonomy-blog-category-section-post-wrapper .taxonomy-blog-category-section-post-content-item-img-category p {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 50%;
+  text-align: center;
   font-style: normal;
   font-variant: normal;
   font-weight: normal;
@@ -2346,16 +2398,24 @@ header .header-wrapper .header-right-button-contact > p {
   margin-top: 40px;
   padding-left: 8px;
 }
-.single-blog-wrapper div, .single-blog-wrapper img, .single-blog-wrapper p, .single-blog-wrapper ul, .single-blog-wrapper a {
+.single-blog-wrapper div,
+.single-blog-wrapper img,
+.single-blog-wrapper p,
+.single-blog-wrapper ul,
+.single-blog-wrapper a {
   margin-top: 32px;
 }
 .single-blog-wrapper img {
+  max-width: 608px;
   width: 100%;
 }
 .single-blog-wrapper .mt-0 {
   margin-top: 0 !important;
 }
 
+.single-blog-content {
+  max-width: 608px;
+}
 .single-blog-content a {
   display: inline-block;
   color: #F5A623;
@@ -2505,7 +2565,8 @@ header .header-wrapper .header-right-button-contact > p {
   justify-content: space-between;
   margin-top: 24px;
 }
-.single-blog-wrapper .single-blog-content-info div, .single-blog-wrapper .single-blog-content-info p {
+.single-blog-wrapper .single-blog-content-info div,
+.single-blog-wrapper .single-blog-content-info p {
   margin-top: 0;
 }
 .single-blog-wrapper .single-blog-content-info-share {
@@ -2563,7 +2624,8 @@ header .header-wrapper .header-right-button-contact > p {
   gap: 16px;
   margin-top: 40px;
 }
-.single-blog-wrapper .single-blog-side-post img, .single-blog-wrapper .single-blog-side-post a {
+.single-blog-wrapper .single-blog-side-post img,
+.single-blog-wrapper .single-blog-side-post a {
   display: flex;
   align-items: flex-start;
   margin-top: 0;
@@ -2604,11 +2666,11 @@ header .header-wrapper .header-right-button-contact > p {
   height: 100%;
 }
 .single-blog-content-text-recommend-post .post-img p {
-  display: inline-block;
+  display: -webkit-box;
   position: absolute;
   top: 0;
   left: 0;
-  padding: 8px 16px;
+  padding: 0 8px;
   background-color: #1B224C;
   font-style: normal;
   font-variant: normal;
@@ -2618,6 +2680,14 @@ header .header-wrapper .header-right-button-contact > p {
   font-family: YuGothic, "Yu Gothic", "游ゴシック", "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
   letter-spacing: 0;
   color: #FFFFFF;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 50%;
+  text-align: center;
+  height: 2em;
+  line-height: 2em;
 }
 .single-blog-content-text-recommend-post .post-text > * {
   margin-top: 24px;

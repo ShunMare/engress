@@ -42,7 +42,13 @@
                 </div>
                 <div class="archive-news-section-post-content-item-text">
                   <a href="<?php the_permalink(); ?>">
-                    <p><?php the_title(); ?></p>
+                    <?php
+                    $title = get_the_title();
+                    if (!empty($title)) : ?>
+                      <p><?php echo $title; ?></p>
+                    <?php else : ?>
+                      <p>タイトルのない投稿</p>
+                    <?php endif; ?>
                   </a>
                 </div>
               </li>

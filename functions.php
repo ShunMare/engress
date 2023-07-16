@@ -7,7 +7,7 @@ function add_custom_post_type()
     array(
       'name' => __('news'),
       'singular_name' => __('news'),
-      'label' => 'News',
+      'label' => 'news',
       'public'        => true,
       'has_archive'   => true,
       'menu_position' => 5,

@@ -26,14 +26,20 @@
     ?>
           <div class="single-blog-side-post">
             <?php
-            if (has_post_thumbnail()) {
+            if (has_post_thumbnail() && get_the_post_thumbnail_url() != "") {
               echo '<img src="' . get_the_post_thumbnail_url() . '" alt="メイン画像">';
             } else {
-              echo '<img src="'. get_template_directory_uri() . '/images/noimage.png"  alt="イメージなし">';
+              echo '<img src="' . get_template_directory_uri() . '/images/noimage.png"  alt="イメージなし">';
             }
             ?>
             <a href="<?php the_permalink(); ?>">
-              <?php the_title(); ?>
+              <?php
+              $title = get_the_title();
+              if (!empty($title)) : ?>
+                <?php echo $title; ?>
+              <?php else : ?>
+                タイトルのない投稿
+              <?php endif; ?>
             </a>
           </div>
     <?php
