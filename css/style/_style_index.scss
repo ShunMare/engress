@@ -1,8 +1,8 @@
-@use '../common/define' as *;
-@use '../common/functions' as *;
+@use "../common/define" as *;
+@use "../common/functions" as *;
 
 .index-main-wrapper {
-  background: url('../images/index_main.jpg') no-repeat center center;
+  background: url("../images/index_main.jpg") no-repeat center center;
   background-size: cover;
 
   .index-main {
@@ -16,23 +16,28 @@
       text-align: center;
       color: map-get($global-colors, "font-sub");
     }
-    
-    &-title{
+
+    &-title {
       @include h2-emphasize-style(map-get($global-colors, "white"));
       @include text-shadow-style(map-get($global-colors, "black"));
+      font-size: 36px;
     }
-    
+
     &-text {
       margin-top: mu(3);
     }
-    
+
     &-button {
       margin-top: mu(6);
       &-content {
-        @include rounded-button-style(map-get($global-colors, "sub"), mu(32), mu(7))
+        @include rounded-button-style(
+          map-get($global-colors, "sub"),
+          mu(32),
+          mu(7)
+        );
       }
     }
-    
+
     &-inquiry {
       margin-top: mu(3);
       text-decoration: underline;
@@ -52,7 +57,7 @@
       justify-content: center;
       text-align: center;
     }
-    
+
     &-list {
       @include respond(phone) {
         display: block;
@@ -61,21 +66,20 @@
         margin: 0 mu(4);
         @include respond(phone) {
           margin: mu(2) 0;
-        }  
+        }
       }
     }
-  
+
     &-introduction {
       margin: mu(10) 0 mu(7);
       * {
         color: map-get($global-colors, "font-main");
       }
-      
+
       &-text {
         padding: mu(2);
-        width: map-get($max-width, 'content');
-        height: mu(31);
-        background-color :map-get($global-colors, "white");
+        width: map-get($max-width, "content");
+        background-color: map-get($global-colors, "white");
 
         &-content {
           display: flex;
@@ -87,9 +91,14 @@
           border: 5px solid map-get($global-colors, "font-main");
           @include respond(phone) {
             padding: mu(4) mu(2);
-          }        
+          }
           &-main {
             @include p-emphasize-style(map-get($global-colors, "font-main"));
+          }
+          &-sub {
+            @include respond(phone) {
+              line-height: mu(3);
+            }
           }
         }
       }
@@ -100,7 +109,7 @@
 .index-section-strong-wrapper {
   background-color: map-get($global-colors, "white");
 
-  .index-section-strong {    
+  .index-section-strong {
     &-feature-content {
       display: flex;
       margin: mu(8) 0;
@@ -111,7 +120,11 @@
         .index-section-strong-feature-content-text {
           order: 2;
           margin: 0 0 0 mu(3);
+          @include respond(tablet-landscape-phone) {
+            margin: 0;
+          }
         }
+
         .index-section-strong-feature-content-img {
           order: 1;
           margin: 0 mu(3) 0 0;
@@ -120,7 +133,9 @@
       @include respond(tablet-landscape-phone) {
         margin: mu(3) 0;
         @include reset-vertical-margins;
-        &:first-child, &:nth-child(2), &:last-child {
+        &:first-child,
+        &:nth-child(2),
+        &:last-child {
           position: relative;
           &::after {
             position: absolute;
@@ -136,7 +151,7 @@
           @include background-image-style("../images/feature03.jpg", 0.5, 0.5);
         }
       }
-      
+
       &-text {
         margin: 0 mu(3) 0 0;
         @include reset-horizon-margins;
@@ -153,7 +168,7 @@
           height: mu(4);
           background-color: map-get($global-colors, "sub");
           > p {
-            color : map-get($global-colors, "font-sub");
+            color: map-get($global-colors, "font-sub");
           }
         }
 
@@ -162,22 +177,22 @@
           > p {
             @include p-emphasize-style(map-get($global-colors, "font-main"));
             @include respond(tablet-landscape-phone) {
-              color : map-get($global-colors, "font-sub");
+              color: map-get($global-colors, "font-sub");
             }
           }
         }
-        
+
         &-content {
           margin-top: mu(4);
           > p {
             font-weight: medium;
             @include respond(tablet-landscape-phone) {
-              color : map-get($global-colors, "font-sub");
+              color: map-get($global-colors, "font-sub");
             }
           }
         }
       }
-      
+
       &-img {
         margin: 0 0 0 mu(3);
         width: 100%;
@@ -188,7 +203,7 @@
         }
       }
     }
-  
+
     &-plan {
       display: flex;
       justify-content: center;
@@ -196,14 +211,14 @@
       padding: mu(7) 0 mu(6);
       width: 100%;
       height: mu(27);
-      background: url('../images/price.png') no-repeat center center;
+      background: url("../images/price.png") no-repeat center center;
       background-size: cover;
-  
+
       &-content {
         > p {
           @include p-emphasize-style(map-get($global-colors, "font-sub"));
         }
-        
+
         &-button {
           display: flex;
           justify-content: center;
@@ -214,7 +229,11 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            @include rounded-button-style(map-get($global-colors, "white"), mu(25), mu(6));
+            @include rounded-button-style(
+              map-get($global-colors, "white"),
+              mu(25),
+              mu(6)
+            );
             background-color: transparent;
             border: 1px solid map-get($global-colors, "white");
             > p {
@@ -234,7 +253,7 @@
     * {
       color: map-get($global-colors, "font-sub");
     }
-    
+
     &-example {
       display: flex;
       margin-top: mu(17);
@@ -242,7 +261,7 @@
         display: block;
         margin-top: mu(8);
       }
-      
+
       &-card {
         width: mu(35);
         margin: 0 mu(2);
@@ -259,19 +278,19 @@
           margin: mu(2) 0;
           @include reset-vertical-margins;
         }
-  
+
         &-text {
           font-weight: bold;
           color: map-get($global-colors, "font-sub");
         }
-        
+
         &-img {
           display: flex;
           justify-content: center;
           align-items: end;
           margin-top: mu(1);
           width: mu(35);
-          height: mu(21);
+          min-height: mu(21);
           background-color: map-get($global-colors, "white");
           @include respond(tablet-landscape-phone) {
             margin-top: 0;
@@ -279,10 +298,10 @@
           }
           > img {
             width: 50%;
-            height: 80%;
+            height: auto;
           }
         }
-        
+
         &-info {
           display: flex;
           flex-direction: column;
@@ -290,7 +309,7 @@
 
           &-text {
             font-weight: bold;
-            color: map-get($global-colors, "font-sub");   
+            color: map-get($global-colors, "font-sub");
           }
 
           &-personal {
@@ -305,7 +324,7 @@
               padding-left: mu(1);
               width: mu(12);
             }
-            
+
             &-name {
               margin-left: mu(1);
               padding-left: mu(1);
@@ -333,7 +352,7 @@
     &-content-list {
       display: flex;
       margin: mu(1) 0;
-      height: mu(8); 
+      height: mu(8);
       background-color: map-get($global-colors, "fill");
       @include reset-vertical-margins;
       * {
@@ -344,7 +363,7 @@
       @include respond(tablet-landscape-phone) {
         height: mu(12);
       }
-      
+
       &-no {
         width: mu(8);
         height: 100%;
@@ -363,13 +382,18 @@
           width: mu(26);
           .vertical-line {
             position: absolute;
-            @include vertical-line-style(map-get($global-colors, "separate"), -15%, 100%, 130%);
+            @include vertical-line-style(
+              map-get($global-colors, "separate"),
+              -15%,
+              100%,
+              130%
+            );
           }
           p {
             font-weight: bold;
           }
         }
-        
+
         &-description {
           padding-left: mu(7);
         }
@@ -394,29 +418,29 @@
   .index-section-qa {
     &-content-toggle {
       padding: mu(4) 0 mu(4);
-      border-top: 1px solid map-get($global-colors, "main");      
+      border-top: 1px solid map-get($global-colors, "main");
       &:last-child {
         border-bottom: 1px solid map-get($global-colors, "main");
       }
-      
+
       &-question {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        
+
         &-toggle {
           position: relative;
           margin-right: mu(3);
           width: mu(3);
           height: mu(3);
           cursor: pointer;
-          
+
           .bar {
             position: absolute;
             width: 100%;
             height: 3px;
             background-color: map-get($global-colors, "main");
-            transition: transform .6s ease-in-out, top .5s ease;
+            transition: transform 0.6s ease-in-out, top 0.5s ease;
             &:first-child {
               top: mu(1);
             }
@@ -426,7 +450,7 @@
             }
           }
         }
-        
+
         .bar-toggle-open {
           .bar {
             &:last-child {
@@ -435,7 +459,7 @@
           }
         }
       }
-      
+
       &-answer {
         display: none;
         margin-top: mu(2);
@@ -450,7 +474,7 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  
+
   .index-section-blog-and-notice-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -474,7 +498,7 @@
             text-align: center;
           }
         }
-        
+
         &-content-post {
           display: flex;
           margin: mu(4) 0;
@@ -483,7 +507,7 @@
             grid-template-columns: 0.5fr 1fr;
             gap: mu(3);
           }
-          
+
           &-img {
             position: relative;
             display: flex;
@@ -498,7 +522,7 @@
               width: 100%;
               height: 100%;
             }
-    
+
             &-category {
               display: flex;
               justify-content: center;
@@ -506,16 +530,22 @@
               position: absolute;
               top: 0;
               left: 0;
-              width: mu(10);
+              max-width: mu(10);
+              padding: mu(1);
               height: mu(3);
               background-color: map-get($global-colors, "main");
               border: 1px solid map-get($global-colors, "box-border-main");
               > p {
                 @include p-small-style(map-get($global-colors, "font-sub"));
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
               }
             }
           }
-          
+
           &-text {
             display: flex;
             flex-direction: column;

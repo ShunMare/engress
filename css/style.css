@@ -106,13 +106,19 @@ meter {
   box-sizing: border-box;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   display: flex;
   justify-content: center;
   margin: auto;
+  overflow-x: hidden;
 }
 
 .wrapper {
+  overflow-x: hidden;
   width: 100%;
   margin-top: 80px;
 }
@@ -157,7 +163,7 @@ h2 {
   font-style: normal;
   font-variant: normal;
   font-weight: bold;
-  font-size: 40px;
+  font-size: 32px;
   line-height: 56px;
   font-family: YuGothic, "Yu Gothic", "游ゴシック", "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
   letter-spacing: 0;
@@ -320,7 +326,7 @@ li:last-child {
   font-style: normal;
   font-variant: normal;
   font-weight: bold;
-  font-size: 32px;
+  font-size: 26px;
   line-height: 48px;
   font-family: YuGothic, "Yu Gothic", "游ゴシック", "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
   letter-spacing: 0;
@@ -442,6 +448,7 @@ header .header-wrapper .header-right-button > a {
   align-items: center;
 }
 header .header-wrapper .header-right-button > a > p {
+  font-size: 14px;
   font-weight: bold;
 }
 header .header-wrapper .header-right-button-documents {
@@ -530,7 +537,7 @@ header .header-wrapper .header-right-button-contact > p {
   font-style: normal;
   font-variant: normal;
   font-weight: bold;
-  font-size: 32px;
+  font-size: 26px;
   line-height: 48px;
   font-family: YuGothic, "Yu Gothic", "游ゴシック", "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
   letter-spacing: 0;
@@ -611,11 +618,28 @@ header .header-wrapper .header-right-button-contact > p {
 }
 .footer-main-wrapper .footer-main-nav {
   display: flex;
+  flex-wrap: wrap;
   height: 24px;
+}
+@media (max-width: 600px) {
+  .footer-main-wrapper .footer-main-nav {
+    height: auto;
+  }
 }
 .footer-main-wrapper .footer-main-nav li {
   position: relative;
   margin: 0 24px;
+}
+@media (max-width: 600px) {
+  .footer-main-wrapper .footer-main-nav li {
+    display: flex;
+    justify-content: center;
+    margin: 8px 0;
+    flex-basis: calc(50% - 24px);
+  }
+}
+.footer-main-wrapper .footer-main-nav li p {
+  white-space: nowrap;
 }
 .footer-main-wrapper .footer-main-nav .vertical-line {
   position: absolute;
@@ -624,6 +648,15 @@ header .header-wrapper .header-right-button-contact > p {
   height: 100%;
   width: 1px;
   background-color: #ffffff;
+}
+@media (max-width: 600px) {
+  .footer-main-wrapper .footer-main-nav .vertical-line {
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 1px;
+    background-color: #ffffff;
+  }
 }
 @media (max-width: 904px) {
   .footer-main-wrapper .footer-main-nav {
@@ -741,6 +774,7 @@ header .header-wrapper .header-right-button-contact > p {
   letter-spacing: 0;
   color: #ffffff;
   text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1607843137);
+  font-size: 36px;
 }
 @media (min-width: 601px) and (max-width: 904px) {
   .index-main-wrapper .index-main-title {
@@ -804,7 +838,6 @@ header .header-wrapper .header-right-button-contact > p {
 .index-section-trouble-wrapper .index-section-trouble-introduction-text {
   padding: 16px;
   width: 904px;
-  height: 248px;
   background-color: #ffffff;
 }
 .index-section-trouble-wrapper .index-section-trouble-introduction-text-content {
@@ -825,7 +858,7 @@ header .header-wrapper .header-right-button-contact > p {
   font-style: normal;
   font-variant: normal;
   font-weight: bold;
-  font-size: 32px;
+  font-size: 26px;
   line-height: 48px;
   font-family: YuGothic, "Yu Gothic", "游ゴシック", "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
   letter-spacing: 0;
@@ -835,6 +868,11 @@ header .header-wrapper .header-right-button-contact > p {
   .index-section-trouble-wrapper .index-section-trouble-introduction-text-content-main {
     font-size: 24px;
     line-height: 40px;
+  }
+}
+@media (max-width: 600px) {
+  .index-section-trouble-wrapper .index-section-trouble-introduction-text-content-sub {
+    line-height: 24px;
   }
 }
 
@@ -855,6 +893,11 @@ header .header-wrapper .header-right-button-contact > p {
 .index-section-strong-wrapper .index-section-strong-feature-content:nth-child(even) .index-section-strong-feature-content-text {
   order: 2;
   margin: 0 0 0 24px;
+}
+@media (max-width: 1200px) {
+  .index-section-strong-wrapper .index-section-strong-feature-content:nth-child(even) .index-section-strong-feature-content-text {
+    margin: 0;
+  }
 }
 .index-section-strong-wrapper .index-section-strong-feature-content:nth-child(even) .index-section-strong-feature-content-img {
   order: 1;
@@ -940,7 +983,7 @@ header .header-wrapper .header-right-button-contact > p {
   font-style: normal;
   font-variant: normal;
   font-weight: bold;
-  font-size: 32px;
+  font-size: 26px;
   line-height: 48px;
   font-family: YuGothic, "Yu Gothic", "游ゴシック", "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
   letter-spacing: 0;
@@ -991,7 +1034,7 @@ header .header-wrapper .header-right-button-contact > p {
   font-style: normal;
   font-variant: normal;
   font-weight: bold;
-  font-size: 32px;
+  font-size: 26px;
   line-height: 48px;
   font-family: YuGothic, "Yu Gothic", "游ゴシック", "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
   letter-spacing: 0;
@@ -1079,7 +1122,7 @@ header .header-wrapper .header-right-button-contact > p {
   align-items: end;
   margin-top: 8px;
   width: 280px;
-  height: 168px;
+  min-height: 168px;
   background-color: #ffffff;
 }
 @media (max-width: 1200px) {
@@ -1090,7 +1133,7 @@ header .header-wrapper .header-right-button-contact > p {
 }
 .index-section-success-wrapper .index-section-success-example-card-img > img {
   width: 50%;
-  height: 80%;
+  height: auto;
 }
 .index-section-success-wrapper .index-section-success-example-card-info {
   display: flex;
@@ -1304,7 +1347,8 @@ header .header-wrapper .header-right-button-contact > p {
   position: absolute;
   top: 0;
   left: 0;
-  width: 80px;
+  max-width: 80px;
+  padding: 8px;
   height: 24px;
   background-color: #1B224C;
   border: 1px solid #707070;
@@ -1318,6 +1362,11 @@ header .header-wrapper .header-right-button-contact > p {
   font-family: YuGothic, "Yu Gothic", "游ゴシック", "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
   letter-spacing: 0;
   color: #FFFFFF;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .index-section-blog-and-notice-wrapper .index-section-blog-and-notice-container .index-section-blog-wrapper .index-section-blog-content-post-text {
   display: flex;
@@ -2007,13 +2056,8 @@ header .header-wrapper .header-right-button-contact > p {
 }
 .archive-blog-section-post-wrapper .archive-blog-section-post-content-item-img {
   position: relative;
-  height: 168px;
-}
-@media (max-width: 600px) {
-  .archive-blog-section-post-wrapper .archive-blog-section-post-content-item-img {
-    width: 100%;
-    height: 320px;
-  }
+  width: 100%;
+  height: auto;
 }
 .archive-blog-section-post-wrapper .archive-blog-section-post-content-item-img img {
   width: 100%;
@@ -2026,8 +2070,9 @@ header .header-wrapper .header-right-button-contact > p {
   position: absolute;
   top: 0;
   left: 0;
-  width: 80px;
+  max-width: 80px;
   height: 32px;
+  padding: 8px;
   background-color: #1B224C;
 }
 .archive-blog-section-post-wrapper .archive-blog-section-post-content-item-img-category p {
@@ -2140,14 +2185,17 @@ header .header-wrapper .header-right-button-contact > p {
 .archive-news-section-post-wrapper .archive-news-section-post-content-item:last-child {
   border-bottom: 1px solid #C3C3C3;
 }
+.archive-news-section-post-wrapper .archive-news-section-post-content-item-date {
+  min-width: 80px;
+}
 .archive-news-section-post-wrapper .archive-news-section-post-content-item-text {
   margin-left: 48px;
+  overflow: hidden;
 }
 .archive-news-section-post-wrapper .archive-news-section-post-content-item-text p {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  width: 720px;
   text-decoration: underline;
 }
 
@@ -2215,13 +2263,12 @@ header .header-wrapper .header-right-button-contact > p {
 }
 .taxonomy-blog-category-section-post-wrapper .taxonomy-blog-category-section-post-content-item-img {
   position: relative;
-  height: 168px;
+  width: 100%;
+  height: auto;
 }
-@media (max-width: 600px) {
-  .taxonomy-blog-category-section-post-wrapper .taxonomy-blog-category-section-post-content-item-img {
-    width: 100%;
-    height: 320px;
-  }
+.taxonomy-blog-category-section-post-wrapper .taxonomy-blog-category-section-post-content-item-img img {
+  width: 100%;
+  height: 100%;
 }
 .taxonomy-blog-category-section-post-wrapper .taxonomy-blog-category-section-post-content-item-img-category {
   display: flex;
@@ -2230,18 +2277,12 @@ header .header-wrapper .header-right-button-contact > p {
   position: absolute;
   top: 0;
   left: 0;
-  width: 80px;
+  max-width: 80px;
   height: 32px;
+  padding: 8px;
   background-color: #1B224C;
 }
 .taxonomy-blog-category-section-post-wrapper .taxonomy-blog-category-section-post-content-item-img-category p {
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 50%;
-  text-align: center;
   font-style: normal;
   font-variant: normal;
   font-weight: normal;
@@ -2250,6 +2291,11 @@ header .header-wrapper .header-right-button-contact > p {
   font-family: YuGothic, "Yu Gothic", "游ゴシック", "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
   letter-spacing: 0;
   color: #FFFFFF;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .taxonomy-blog-category-section-post-wrapper .taxonomy-blog-category-section-post-content-item-text {
   display: flex;
@@ -2346,14 +2392,17 @@ header .header-wrapper .header-right-button-contact > p {
 .taxonomy-news-category-section-post-wrapper .taxonomy-news-category-section-post-content-item:last-child {
   border-bottom: 1px solid #C3C3C3;
 }
+.taxonomy-news-category-section-post-wrapper .taxonomy-news-category-section-post-content-item-date {
+  min-width: 80px;
+}
 .taxonomy-news-category-section-post-wrapper .taxonomy-news-category-section-post-content-item-text {
   margin-left: 48px;
+  overflow: hidden;
 }
 .taxonomy-news-category-section-post-wrapper .taxonomy-news-category-section-post-content-item-text p {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  width: 720px;
   text-decoration: underline;
 }
 
@@ -2562,6 +2611,7 @@ header .header-wrapper .header-right-button-contact > p {
 }
 .single-blog-wrapper .single-blog-content-info {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   margin-top: 24px;
 }
@@ -2574,6 +2624,11 @@ header .header-wrapper .header-right-button-contact > p {
   justify-content: flex-start;
   margin-top: 0;
 }
+@media (max-width: 600px) {
+  .single-blog-wrapper .single-blog-content-info-share {
+    flex-direction: column;
+  }
+}
 .single-blog-wrapper .single-blog-content-info-share > p {
   display: flex;
   margin-top: 0;
@@ -2581,12 +2636,21 @@ header .header-wrapper .header-right-button-contact > p {
   padding: 0 8px;
   border-radius: 3px;
   color: #FFFFFF;
+  white-space: nowrap;
 }
 .single-blog-wrapper .single-blog-content-info-share > p:first-child {
   margin-left: 0;
 }
 .single-blog-wrapper .single-blog-content-info-share > p:last-child {
   margin-right: 0;
+}
+@media (max-width: 600px) {
+  .single-blog-wrapper .single-blog-content-info-share > p {
+    padding: 4px;
+    margin-bottom: 4px;
+    display: flex;
+    justify-content: center;
+  }
 }
 .single-blog-wrapper .single-blog-content-info-share > p i {
   display: flex;
@@ -2659,7 +2723,7 @@ header .header-wrapper .header-right-button-contact > p {
 .single-blog-content-text-recommend-post .post-img {
   position: relative;
   background-size: cover;
-  height: 136px;
+  width: auto;
 }
 .single-blog-content-text-recommend-post .post-img img {
   width: 100%;
@@ -2689,8 +2753,13 @@ header .header-wrapper .header-right-button-contact > p {
   height: 2em;
   line-height: 2em;
 }
-.single-blog-content-text-recommend-post .post-text > * {
-  margin-top: 24px;
+.single-blog-content-text-recommend-post .post-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.single-blog-content-text-recommend-post .post-text p, .single-blog-content-text-recommend-post .post-text > * {
+  margin-top: 0;
 }
 .single-blog-content-text-recommend-post .post-text-title {
   display: -webkit-box;

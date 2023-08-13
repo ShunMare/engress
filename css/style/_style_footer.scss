@@ -27,14 +27,30 @@
 
     &-nav {
       display: flex;
+      flex-wrap: wrap;
       height: mu(3);
+      @include respond(phone) {
+        height: auto;
+      }
       li {
         position: relative;
         margin: 0 mu(3);
+        @include respond(phone) {
+          display: flex;
+          justify-content: center ;
+          margin: mu(1) 0;
+          flex-basis: calc(50% - mu(3));
+        }  
+        p {
+          white-space: nowrap;
+        }
       }
       .vertical-line {
         position: absolute;
         @include vertical-line-style(map-get($global-colors, "white"), 0, - mu(3), 100%);
+        @include respond(phone) {
+          @include vertical-line-style(map-get($global-colors, "white"), 0, 0, 100%);
+        }
       }
       @include respond(tablet-portrait-phone) {
         justify-content: center;

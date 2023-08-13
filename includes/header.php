@@ -1,4 +1,4 @@
-<?php wp_body_open(); ?>
+<!-- <?php wp_body_open(); ?> -->
 <header>
     <div class="header-wrapper">
       <div class="header-left">
