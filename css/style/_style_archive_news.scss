@@ -1,10 +1,10 @@
-@use '../common/define' as *;
-@use '../common/functions' as *;
+@use "../common/define" as *;
+@use "../common/functions" as *;
 
 .archive-news-main-wrapper {
-  background: url('../images/news_main_2x.png') no-repeat center center;
+  background: url("../images/news_main_2x.png") no-repeat center center;
   background-size: cover;
-  
+
   .archive-news-main {
     display: flex;
     justify-content: center;
@@ -16,8 +16,8 @@
       text-align: center;
       color: map-get($global-colors, "font-sub");
     }
-    
-    &-title{
+
+    &-title {
       @include h2-emphasize-style(map-get($global-colors, "white"));
     }
   }
@@ -34,14 +34,16 @@
         &:last-child {
           border-bottom: 1px solid map-get($global-colors, "separate");
         }
-
+        &-date {
+          min-width: mu(10);
+        }
         &-text {
           margin-left: mu(6);
-          p {
+          overflow: hidden;
+            p {
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-            width: mu(90);
             text-decoration: underline;
           }
         }

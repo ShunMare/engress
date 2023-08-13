@@ -34,14 +34,17 @@
         &:last-child {
           border-bottom: 1px solid map-get($global-colors, "separate");
         }
+        &-date {
+          min-width: mu(10);
+        }
 
         &-text {
           margin-left: mu(6);
+          overflow: hidden;
           p {
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-            width: mu(90);
             text-decoration: underline;
           }
         }

@@ -7,7 +7,6 @@
 
 <body <?php body_class(); ?>>
   <?php get_template_part('includes/header') ?>
-  </header>
   <div class="wrapper">
     <main class="index-main-wrapper">
       <div class="index-main">
@@ -47,7 +46,7 @@
           <div class="index-section-trouble-introduction-text">
             <div class="index-section-trouble-introduction-text-content">
               <p class="index-section-trouble-introduction-text-content-main">
-                Engressは<br><span class="underline_sub_color">TOEFLに特化したスクール</span>です
+                Engressは<br><span class="underline_sub_color">TOEFLに特化した<br class="none-tablet-portrait-desktop">スクール</span>です
               </p>
               <p class="index-section-trouble-introduction-text-content-sub">
                 完全オーダーメイドで、１人１人の悩みに合わせた最適な指導で<br class="none-phone">TOEFLの苦手分野を克服します。
@@ -324,13 +323,13 @@
                         echo '<img src="' . get_template_directory_uri() . '/images/noimage.png"  alt="イメージなし">';
                       }
                       ?>
-                      <div class="index-section-blog-content-post-img-category">
                         <?php
                         if (!empty($categories)) {
+                          echo '<div class="index-section-blog-content-post-img-category">';
                           echo '<p>' . esc_html($categories[0]->name) . '</p>';
+                          echo '</div>';
                         }
                         ?>
-                      </div>
                     </div>
                     <div class="index-section-blog-content-post-text">
                       <a href="<?php the_permalink(); ?>" class="index-section-blog-content-post-text-title">

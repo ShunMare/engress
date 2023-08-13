@@ -10,7 +10,7 @@
           <a href="<?php echo esc_url(get_post_type_archive_link('news')); ?>"><p>お知らせ</p></a>
         </li>
         <li>
-          <div class="vertical-line"></div>
+          <div class="vertical-line none-phone"></div>
           <a href="<?php echo esc_url(get_post_type_archive_link('blog')); ?>"><p>ブログ</p></a>
         </li>
         <li>
